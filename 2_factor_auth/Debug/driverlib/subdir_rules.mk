@@ -1,0 +1,167 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+# Each subdirectory must supply rules for building sources it contributes
+driverlib/adc.obj: ../driverlib/adc.c $(GEN_OPTS) $(GEN_SRCS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: ARM Compiler'
+	"C:/ti/ccsv5/tools/compiler/tms470_4.9.5/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --include_path="C:/ti/ccsv5/tools/compiler/tms470_4.9.5/include" --include_path="C:/Users/IBM_ADMIN/EE382NProjects/2_factor_auth" --include_path="{PROJECT_LOC}/lwip-1.3.2/src/include" --include_path="{PROJECT_LOC}/lwip-1.3.2/src/include/ipv4" --include_path="{PROJECT_LOC}/lwip-1.3.2/src/include/apps" --include_path="{PROJECT_LOC}/lwip-1.3.2/ports/stellaris/include" --gcc --define=ccs="ccs" --define=PART_LM3S8962 --diag_warning=225 --display_error_number --ual --preproc_with_compile --preproc_dependency="driverlib/adc.pp" --obj_directory="driverlib" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+driverlib/can.obj: ../driverlib/can.c $(GEN_OPTS) $(GEN_SRCS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: ARM Compiler'
+	"C:/ti/ccsv5/tools/compiler/tms470_4.9.5/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --include_path="C:/ti/ccsv5/tools/compiler/tms470_4.9.5/include" --include_path="C:/Users/IBM_ADMIN/EE382NProjects/2_factor_auth" --include_path="{PROJECT_LOC}/lwip-1.3.2/src/include" --include_path="{PROJECT_LOC}/lwip-1.3.2/src/include/ipv4" --include_path="{PROJECT_LOC}/lwip-1.3.2/src/include/apps" --include_path="{PROJECT_LOC}/lwip-1.3.2/ports/stellaris/include" --gcc --define=ccs="ccs" --define=PART_LM3S8962 --diag_warning=225 --display_error_number --ual --preproc_with_compile --preproc_dependency="driverlib/can.pp" --obj_directory="driverlib" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+driverlib/comp.obj: ../driverlib/comp.c $(GEN_OPTS) $(GEN_SRCS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: ARM Compiler'
+	"C:/ti/ccsv5/tools/compiler/tms470_4.9.5/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --include_path="C:/ti/ccsv5/tools/compiler/tms470_4.9.5/include" --include_path="C:/Users/IBM_ADMIN/EE382NProjects/2_factor_auth" --include_path="{PROJECT_LOC}/lwip-1.3.2/src/include" --include_path="{PROJECT_LOC}/lwip-1.3.2/src/include/ipv4" --include_path="{PROJECT_LOC}/lwip-1.3.2/src/include/apps" --include_path="{PROJECT_LOC}/lwip-1.3.2/ports/stellaris/include" --gcc --define=ccs="ccs" --define=PART_LM3S8962 --diag_warning=225 --display_error_number --ual --preproc_with_compile --preproc_dependency="driverlib/comp.pp" --obj_directory="driverlib" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+driverlib/cpu.obj: ../driverlib/cpu.c $(GEN_OPTS) $(GEN_SRCS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: ARM Compiler'
+	"C:/ti/ccsv5/tools/compiler/tms470_4.9.5/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --include_path="C:/ti/ccsv5/tools/compiler/tms470_4.9.5/include" --include_path="C:/Users/IBM_ADMIN/EE382NProjects/2_factor_auth" --include_path="{PROJECT_LOC}/lwip-1.3.2/src/include" --include_path="{PROJECT_LOC}/lwip-1.3.2/src/include/ipv4" --include_path="{PROJECT_LOC}/lwip-1.3.2/src/include/apps" --include_path="{PROJECT_LOC}/lwip-1.3.2/ports/stellaris/include" --gcc --define=ccs="ccs" --define=PART_LM3S8962 --diag_warning=225 --display_error_number --ual --preproc_with_compile --preproc_dependency="driverlib/cpu.pp" --obj_directory="driverlib" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+driverlib/epi.obj: ../driverlib/epi.c $(GEN_OPTS) $(GEN_SRCS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: ARM Compiler'
+	"C:/ti/ccsv5/tools/compiler/tms470_4.9.5/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --include_path="C:/ti/ccsv5/tools/compiler/tms470_4.9.5/include" --include_path="C:/Users/IBM_ADMIN/EE382NProjects/2_factor_auth" --include_path="{PROJECT_LOC}/lwip-1.3.2/src/include" --include_path="{PROJECT_LOC}/lwip-1.3.2/src/include/ipv4" --include_path="{PROJECT_LOC}/lwip-1.3.2/src/include/apps" --include_path="{PROJECT_LOC}/lwip-1.3.2/ports/stellaris/include" --gcc --define=ccs="ccs" --define=PART_LM3S8962 --diag_warning=225 --display_error_number --ual --preproc_with_compile --preproc_dependency="driverlib/epi.pp" --obj_directory="driverlib" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+driverlib/ethernet.obj: ../driverlib/ethernet.c $(GEN_OPTS) $(GEN_SRCS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: ARM Compiler'
+	"C:/ti/ccsv5/tools/compiler/tms470_4.9.5/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --include_path="C:/ti/ccsv5/tools/compiler/tms470_4.9.5/include" --include_path="C:/Users/IBM_ADMIN/EE382NProjects/2_factor_auth" --include_path="{PROJECT_LOC}/lwip-1.3.2/src/include" --include_path="{PROJECT_LOC}/lwip-1.3.2/src/include/ipv4" --include_path="{PROJECT_LOC}/lwip-1.3.2/src/include/apps" --include_path="{PROJECT_LOC}/lwip-1.3.2/ports/stellaris/include" --gcc --define=ccs="ccs" --define=PART_LM3S8962 --diag_warning=225 --display_error_number --ual --preproc_with_compile --preproc_dependency="driverlib/ethernet.pp" --obj_directory="driverlib" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+driverlib/flash.obj: ../driverlib/flash.c $(GEN_OPTS) $(GEN_SRCS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: ARM Compiler'
+	"C:/ti/ccsv5/tools/compiler/tms470_4.9.5/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --include_path="C:/ti/ccsv5/tools/compiler/tms470_4.9.5/include" --include_path="C:/Users/IBM_ADMIN/EE382NProjects/2_factor_auth" --include_path="{PROJECT_LOC}/lwip-1.3.2/src/include" --include_path="{PROJECT_LOC}/lwip-1.3.2/src/include/ipv4" --include_path="{PROJECT_LOC}/lwip-1.3.2/src/include/apps" --include_path="{PROJECT_LOC}/lwip-1.3.2/ports/stellaris/include" --gcc --define=ccs="ccs" --define=PART_LM3S8962 --diag_warning=225 --display_error_number --ual --preproc_with_compile --preproc_dependency="driverlib/flash.pp" --obj_directory="driverlib" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+driverlib/gpio.obj: ../driverlib/gpio.c $(GEN_OPTS) $(GEN_SRCS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: ARM Compiler'
+	"C:/ti/ccsv5/tools/compiler/tms470_4.9.5/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --include_path="C:/ti/ccsv5/tools/compiler/tms470_4.9.5/include" --include_path="C:/Users/IBM_ADMIN/EE382NProjects/2_factor_auth" --include_path="{PROJECT_LOC}/lwip-1.3.2/src/include" --include_path="{PROJECT_LOC}/lwip-1.3.2/src/include/ipv4" --include_path="{PROJECT_LOC}/lwip-1.3.2/src/include/apps" --include_path="{PROJECT_LOC}/lwip-1.3.2/ports/stellaris/include" --gcc --define=ccs="ccs" --define=PART_LM3S8962 --diag_warning=225 --display_error_number --ual --preproc_with_compile --preproc_dependency="driverlib/gpio.pp" --obj_directory="driverlib" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+driverlib/hibernate.obj: ../driverlib/hibernate.c $(GEN_OPTS) $(GEN_SRCS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: ARM Compiler'
+	"C:/ti/ccsv5/tools/compiler/tms470_4.9.5/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --include_path="C:/ti/ccsv5/tools/compiler/tms470_4.9.5/include" --include_path="C:/Users/IBM_ADMIN/EE382NProjects/2_factor_auth" --include_path="{PROJECT_LOC}/lwip-1.3.2/src/include" --include_path="{PROJECT_LOC}/lwip-1.3.2/src/include/ipv4" --include_path="{PROJECT_LOC}/lwip-1.3.2/src/include/apps" --include_path="{PROJECT_LOC}/lwip-1.3.2/ports/stellaris/include" --gcc --define=ccs="ccs" --define=PART_LM3S8962 --diag_warning=225 --display_error_number --ual --preproc_with_compile --preproc_dependency="driverlib/hibernate.pp" --obj_directory="driverlib" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+driverlib/i2c.obj: ../driverlib/i2c.c $(GEN_OPTS) $(GEN_SRCS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: ARM Compiler'
+	"C:/ti/ccsv5/tools/compiler/tms470_4.9.5/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --include_path="C:/ti/ccsv5/tools/compiler/tms470_4.9.5/include" --include_path="C:/Users/IBM_ADMIN/EE382NProjects/2_factor_auth" --include_path="{PROJECT_LOC}/lwip-1.3.2/src/include" --include_path="{PROJECT_LOC}/lwip-1.3.2/src/include/ipv4" --include_path="{PROJECT_LOC}/lwip-1.3.2/src/include/apps" --include_path="{PROJECT_LOC}/lwip-1.3.2/ports/stellaris/include" --gcc --define=ccs="ccs" --define=PART_LM3S8962 --diag_warning=225 --display_error_number --ual --preproc_with_compile --preproc_dependency="driverlib/i2c.pp" --obj_directory="driverlib" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+driverlib/i2s.obj: ../driverlib/i2s.c $(GEN_OPTS) $(GEN_SRCS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: ARM Compiler'
+	"C:/ti/ccsv5/tools/compiler/tms470_4.9.5/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --include_path="C:/ti/ccsv5/tools/compiler/tms470_4.9.5/include" --include_path="C:/Users/IBM_ADMIN/EE382NProjects/2_factor_auth" --include_path="{PROJECT_LOC}/lwip-1.3.2/src/include" --include_path="{PROJECT_LOC}/lwip-1.3.2/src/include/ipv4" --include_path="{PROJECT_LOC}/lwip-1.3.2/src/include/apps" --include_path="{PROJECT_LOC}/lwip-1.3.2/ports/stellaris/include" --gcc --define=ccs="ccs" --define=PART_LM3S8962 --diag_warning=225 --display_error_number --ual --preproc_with_compile --preproc_dependency="driverlib/i2s.pp" --obj_directory="driverlib" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+driverlib/interrupt.obj: ../driverlib/interrupt.c $(GEN_OPTS) $(GEN_SRCS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: ARM Compiler'
+	"C:/ti/ccsv5/tools/compiler/tms470_4.9.5/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --include_path="C:/ti/ccsv5/tools/compiler/tms470_4.9.5/include" --include_path="C:/Users/IBM_ADMIN/EE382NProjects/2_factor_auth" --include_path="{PROJECT_LOC}/lwip-1.3.2/src/include" --include_path="{PROJECT_LOC}/lwip-1.3.2/src/include/ipv4" --include_path="{PROJECT_LOC}/lwip-1.3.2/src/include/apps" --include_path="{PROJECT_LOC}/lwip-1.3.2/ports/stellaris/include" --gcc --define=ccs="ccs" --define=PART_LM3S8962 --diag_warning=225 --display_error_number --ual --preproc_with_compile --preproc_dependency="driverlib/interrupt.pp" --obj_directory="driverlib" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+driverlib/mpu.obj: ../driverlib/mpu.c $(GEN_OPTS) $(GEN_SRCS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: ARM Compiler'
+	"C:/ti/ccsv5/tools/compiler/tms470_4.9.5/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --include_path="C:/ti/ccsv5/tools/compiler/tms470_4.9.5/include" --include_path="C:/Users/IBM_ADMIN/EE382NProjects/2_factor_auth" --include_path="{PROJECT_LOC}/lwip-1.3.2/src/include" --include_path="{PROJECT_LOC}/lwip-1.3.2/src/include/ipv4" --include_path="{PROJECT_LOC}/lwip-1.3.2/src/include/apps" --include_path="{PROJECT_LOC}/lwip-1.3.2/ports/stellaris/include" --gcc --define=ccs="ccs" --define=PART_LM3S8962 --diag_warning=225 --display_error_number --ual --preproc_with_compile --preproc_dependency="driverlib/mpu.pp" --obj_directory="driverlib" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+driverlib/pwm.obj: ../driverlib/pwm.c $(GEN_OPTS) $(GEN_SRCS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: ARM Compiler'
+	"C:/ti/ccsv5/tools/compiler/tms470_4.9.5/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --include_path="C:/ti/ccsv5/tools/compiler/tms470_4.9.5/include" --include_path="C:/Users/IBM_ADMIN/EE382NProjects/2_factor_auth" --include_path="{PROJECT_LOC}/lwip-1.3.2/src/include" --include_path="{PROJECT_LOC}/lwip-1.3.2/src/include/ipv4" --include_path="{PROJECT_LOC}/lwip-1.3.2/src/include/apps" --include_path="{PROJECT_LOC}/lwip-1.3.2/ports/stellaris/include" --gcc --define=ccs="ccs" --define=PART_LM3S8962 --diag_warning=225 --display_error_number --ual --preproc_with_compile --preproc_dependency="driverlib/pwm.pp" --obj_directory="driverlib" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+driverlib/qei.obj: ../driverlib/qei.c $(GEN_OPTS) $(GEN_SRCS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: ARM Compiler'
+	"C:/ti/ccsv5/tools/compiler/tms470_4.9.5/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --include_path="C:/ti/ccsv5/tools/compiler/tms470_4.9.5/include" --include_path="C:/Users/IBM_ADMIN/EE382NProjects/2_factor_auth" --include_path="{PROJECT_LOC}/lwip-1.3.2/src/include" --include_path="{PROJECT_LOC}/lwip-1.3.2/src/include/ipv4" --include_path="{PROJECT_LOC}/lwip-1.3.2/src/include/apps" --include_path="{PROJECT_LOC}/lwip-1.3.2/ports/stellaris/include" --gcc --define=ccs="ccs" --define=PART_LM3S8962 --diag_warning=225 --display_error_number --ual --preproc_with_compile --preproc_dependency="driverlib/qei.pp" --obj_directory="driverlib" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+driverlib/ssi.obj: ../driverlib/ssi.c $(GEN_OPTS) $(GEN_SRCS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: ARM Compiler'
+	"C:/ti/ccsv5/tools/compiler/tms470_4.9.5/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --include_path="C:/ti/ccsv5/tools/compiler/tms470_4.9.5/include" --include_path="C:/Users/IBM_ADMIN/EE382NProjects/2_factor_auth" --include_path="{PROJECT_LOC}/lwip-1.3.2/src/include" --include_path="{PROJECT_LOC}/lwip-1.3.2/src/include/ipv4" --include_path="{PROJECT_LOC}/lwip-1.3.2/src/include/apps" --include_path="{PROJECT_LOC}/lwip-1.3.2/ports/stellaris/include" --gcc --define=ccs="ccs" --define=PART_LM3S8962 --diag_warning=225 --display_error_number --ual --preproc_with_compile --preproc_dependency="driverlib/ssi.pp" --obj_directory="driverlib" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+driverlib/sysctl.obj: ../driverlib/sysctl.c $(GEN_OPTS) $(GEN_SRCS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: ARM Compiler'
+	"C:/ti/ccsv5/tools/compiler/tms470_4.9.5/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --include_path="C:/ti/ccsv5/tools/compiler/tms470_4.9.5/include" --include_path="C:/Users/IBM_ADMIN/EE382NProjects/2_factor_auth" --include_path="{PROJECT_LOC}/lwip-1.3.2/src/include" --include_path="{PROJECT_LOC}/lwip-1.3.2/src/include/ipv4" --include_path="{PROJECT_LOC}/lwip-1.3.2/src/include/apps" --include_path="{PROJECT_LOC}/lwip-1.3.2/ports/stellaris/include" --gcc --define=ccs="ccs" --define=PART_LM3S8962 --diag_warning=225 --display_error_number --ual --preproc_with_compile --preproc_dependency="driverlib/sysctl.pp" --obj_directory="driverlib" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+driverlib/systick.obj: ../driverlib/systick.c $(GEN_OPTS) $(GEN_SRCS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: ARM Compiler'
+	"C:/ti/ccsv5/tools/compiler/tms470_4.9.5/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --include_path="C:/ti/ccsv5/tools/compiler/tms470_4.9.5/include" --include_path="C:/Users/IBM_ADMIN/EE382NProjects/2_factor_auth" --include_path="{PROJECT_LOC}/lwip-1.3.2/src/include" --include_path="{PROJECT_LOC}/lwip-1.3.2/src/include/ipv4" --include_path="{PROJECT_LOC}/lwip-1.3.2/src/include/apps" --include_path="{PROJECT_LOC}/lwip-1.3.2/ports/stellaris/include" --gcc --define=ccs="ccs" --define=PART_LM3S8962 --diag_warning=225 --display_error_number --ual --preproc_with_compile --preproc_dependency="driverlib/systick.pp" --obj_directory="driverlib" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+driverlib/timer.obj: ../driverlib/timer.c $(GEN_OPTS) $(GEN_SRCS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: ARM Compiler'
+	"C:/ti/ccsv5/tools/compiler/tms470_4.9.5/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --include_path="C:/ti/ccsv5/tools/compiler/tms470_4.9.5/include" --include_path="C:/Users/IBM_ADMIN/EE382NProjects/2_factor_auth" --include_path="{PROJECT_LOC}/lwip-1.3.2/src/include" --include_path="{PROJECT_LOC}/lwip-1.3.2/src/include/ipv4" --include_path="{PROJECT_LOC}/lwip-1.3.2/src/include/apps" --include_path="{PROJECT_LOC}/lwip-1.3.2/ports/stellaris/include" --gcc --define=ccs="ccs" --define=PART_LM3S8962 --diag_warning=225 --display_error_number --ual --preproc_with_compile --preproc_dependency="driverlib/timer.pp" --obj_directory="driverlib" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+driverlib/uart.obj: ../driverlib/uart.c $(GEN_OPTS) $(GEN_SRCS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: ARM Compiler'
+	"C:/ti/ccsv5/tools/compiler/tms470_4.9.5/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --include_path="C:/ti/ccsv5/tools/compiler/tms470_4.9.5/include" --include_path="C:/Users/IBM_ADMIN/EE382NProjects/2_factor_auth" --include_path="{PROJECT_LOC}/lwip-1.3.2/src/include" --include_path="{PROJECT_LOC}/lwip-1.3.2/src/include/ipv4" --include_path="{PROJECT_LOC}/lwip-1.3.2/src/include/apps" --include_path="{PROJECT_LOC}/lwip-1.3.2/ports/stellaris/include" --gcc --define=ccs="ccs" --define=PART_LM3S8962 --diag_warning=225 --display_error_number --ual --preproc_with_compile --preproc_dependency="driverlib/uart.pp" --obj_directory="driverlib" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+driverlib/udma.obj: ../driverlib/udma.c $(GEN_OPTS) $(GEN_SRCS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: ARM Compiler'
+	"C:/ti/ccsv5/tools/compiler/tms470_4.9.5/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --include_path="C:/ti/ccsv5/tools/compiler/tms470_4.9.5/include" --include_path="C:/Users/IBM_ADMIN/EE382NProjects/2_factor_auth" --include_path="{PROJECT_LOC}/lwip-1.3.2/src/include" --include_path="{PROJECT_LOC}/lwip-1.3.2/src/include/ipv4" --include_path="{PROJECT_LOC}/lwip-1.3.2/src/include/apps" --include_path="{PROJECT_LOC}/lwip-1.3.2/ports/stellaris/include" --gcc --define=ccs="ccs" --define=PART_LM3S8962 --diag_warning=225 --display_error_number --ual --preproc_with_compile --preproc_dependency="driverlib/udma.pp" --obj_directory="driverlib" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+driverlib/usb.obj: ../driverlib/usb.c $(GEN_OPTS) $(GEN_SRCS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: ARM Compiler'
+	"C:/ti/ccsv5/tools/compiler/tms470_4.9.5/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --include_path="C:/ti/ccsv5/tools/compiler/tms470_4.9.5/include" --include_path="C:/Users/IBM_ADMIN/EE382NProjects/2_factor_auth" --include_path="{PROJECT_LOC}/lwip-1.3.2/src/include" --include_path="{PROJECT_LOC}/lwip-1.3.2/src/include/ipv4" --include_path="{PROJECT_LOC}/lwip-1.3.2/src/include/apps" --include_path="{PROJECT_LOC}/lwip-1.3.2/ports/stellaris/include" --gcc --define=ccs="ccs" --define=PART_LM3S8962 --diag_warning=225 --display_error_number --ual --preproc_with_compile --preproc_dependency="driverlib/usb.pp" --obj_directory="driverlib" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+driverlib/watchdog.obj: ../driverlib/watchdog.c $(GEN_OPTS) $(GEN_SRCS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: ARM Compiler'
+	"C:/ti/ccsv5/tools/compiler/tms470_4.9.5/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --include_path="C:/ti/ccsv5/tools/compiler/tms470_4.9.5/include" --include_path="C:/Users/IBM_ADMIN/EE382NProjects/2_factor_auth" --include_path="{PROJECT_LOC}/lwip-1.3.2/src/include" --include_path="{PROJECT_LOC}/lwip-1.3.2/src/include/ipv4" --include_path="{PROJECT_LOC}/lwip-1.3.2/src/include/apps" --include_path="{PROJECT_LOC}/lwip-1.3.2/ports/stellaris/include" --gcc --define=ccs="ccs" --define=PART_LM3S8962 --diag_warning=225 --display_error_number --ual --preproc_with_compile --preproc_dependency="driverlib/watchdog.pp" --obj_directory="driverlib" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+

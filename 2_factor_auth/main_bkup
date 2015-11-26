@@ -1,0 +1,557 @@
+#include "inc/hw_ints.h"
+#include "inc/hw_memmap.h"
+#include "inc/hw_nvic.h"
+#include "inc/hw_types.h"
+#include "driverlib/ethernet.h"
+#include "driverlib/gpio.h"
+#include "driverlib/flash.h"
+#include "driverlib/interrupt.h"
+#include "driverlib/sysctl.h"
+#include "driverlib/systick.h"
+#include "utils/locator.h"
+#include "utils/lwiplib.h"
+#include "utils/uartstdio.h"
+#include "utils/ustdlib.h"
+//#include "drivers/rit128x96x4.h"
+
+/*
+void tcp_port_init( void );
+static err_t connection_accept( void *arg, struct tcp_pcb *pcb, err_t err );
+static err_t tcp_data_receive( void *arg, struct tcp_pcb *pcb, struct pbuf *p, err_t err );*/
+static void close_conn( struct tcp_pcb *pcb );
+
+void tcp_setup(void);
+err_t connectCallback(void *arg, struct tcp_pcb *tpcb, err_t err);
+unsigned int tcp_send_packet(struct tcp_pcb*);
+err_t tcpRecvCallback(void *arg, struct tcp_pcb *tpcb, struct pbuf *p, err_t err);
+void tcpErrCallback(void *arg, err_t err);
+err_t tcpSendCallback(void *arg, struct tcp_pcb *tpcb, u16_t len);
+
+
+unsigned char g_pucDisplayStr[64];
+unsigned int g_uiNewMsg;
+volatile unsigned int g_uinotSent;
+
+//*****************************************************************************
+//
+// Defines for setting up the system clock.
+//
+//*****************************************************************************
+#define SYSTICKHZ               100
+#define SYSTICKMS               (1000 / SYSTICKHZ)
+#define SYSTICKUS               (1000000 / SYSTICKHZ)
+#define SYSTICKNS               (1000000000 / SYSTICKHZ)
+
+//*****************************************************************************
+//
+// Interrupt priority definitions.  The top 3 bits of these values are
+// significant with lower values indicating higher priority interrupts.
+//
+//*****************************************************************************
+#define SYSTICK_INT_PRIORITY    0x80
+#define ETHERNET_INT_PRIORITY   0xC0
+
+//*****************************************************************************
+//
+// The error routine that is called if the driver library encounters an error.
+//
+//*****************************************************************************
+#ifdef DEBUG
+void
+__error__(char *pcFilename, unsigned long ulLine)
+{
+}
+#endif
+
+//*****************************************************************************
+//
+// Display an lwIP type IP Address.
+//
+//*****************************************************************************
+void
+DisplayIPAddress(unsigned long ipaddr, unsigned long ulCol,
+                 unsigned long ulRow)
+{
+    char pucBuf[16];
+    unsigned char *pucTemp = (unsigned char *)&ipaddr;
+
+    //
+    // Convert the IP Address into a string.
+    //
+    usprintf(pucBuf, "%d.%d.%d.%d", pucTemp[0], pucTemp[1], pucTemp[2],
+             pucTemp[3]);
+
+    //
+    // Display the string.
+    //
+    RIT128x96x4StringDraw(pucBuf, ulCol, ulRow, 15);
+}
+
+//*****************************************************************************
+//
+// Required by lwIP library to support any host-related timer functions.
+//
+//*****************************************************************************
+void
+lwIPHostTimerHandler(void)
+{
+    static unsigned long ulLastIPAddress = 0;
+    unsigned long ulIPAddress;
+
+    ulIPAddress = lwIPLocalIPAddrGet();
+    //UARTprintf("Timer: %ld\n",ulIPAddress);
+
+    //
+    // If IP Address has not yet been assigned, update the display accordingly
+    //
+    if(ulIPAddress == 0)
+    {
+        static int iColumn = 6;
+
+        //
+        // Update status bar on the display.
+        //
+        RIT128x96x4Enable(1000000);
+        if(iColumn < 12)
+        {
+            RIT128x96x4StringDraw("< ", 0, 24, 15);
+            RIT128x96x4StringDraw("*",iColumn, 24, 7);
+        }
+        else
+        {
+            RIT128x96x4StringDraw(" *",iColumn - 6, 24, 7);
+        }
+
+        iColumn++;
+        if(iColumn > 114)
+        {
+            iColumn = 6;
+            RIT128x96x4StringDraw(" >", 114, 24, 15);
+        }
+        RIT128x96x4Disable();
+    }
+
+    //
+    // Check if IP address has changed, and display if it has.
+    //
+    else if(ulLastIPAddress != ulIPAddress)
+    {
+        ulLastIPAddress = ulIPAddress;
+        RIT128x96x4Enable(1000000);
+        RIT128x96x4StringDraw("                       ", 0, 16, 15);
+        RIT128x96x4StringDraw("                       ", 0, 24, 15);
+        RIT128x96x4StringDraw("IP:   ", 0, 16, 15);
+        RIT128x96x4StringDraw("MASK: ", 0, 24, 15);
+        RIT128x96x4StringDraw("GW:   ", 0, 32, 15);
+        DisplayIPAddress(ulIPAddress, 36, 16);
+        ulIPAddress = lwIPLocalNetMaskGet();
+        DisplayIPAddress(ulIPAddress, 36, 24);
+        ulIPAddress = lwIPLocalGWAddrGet();
+        DisplayIPAddress(ulIPAddress, 36, 32);
+        RIT128x96x4Disable();
+        g_uinotSent = 1;
+    }
+}
+
+//*****************************************************************************
+//
+// The interrupt handler for the SysTick interrupt.
+//
+//*****************************************************************************
+void
+SysTickIntHandler(void)
+{
+    //
+    // Call the lwIP timer handler.
+    //
+    lwIPTimer(SYSTICKMS);
+
+    //
+    // Run the file system tick handler.
+    //
+    //fs_tick(SYSTICKMS);
+    if(g_uiNewMsg){
+    	g_uiNewMsg = 0;
+    	RIT128x96x4Enable(1000000);
+    	RIT128x96x4StringDraw(g_pucDisplayStr, 0, 48, 15);
+    	RIT128x96x4Disable();
+    }
+}
+
+//*****************************************************************************
+//
+// This example demonstrates the use of the Ethernet Controller.
+//
+//*****************************************************************************
+
+int
+main(void)
+{
+    unsigned long ulUser0, ulUser1;
+    unsigned char pucMACArray[8];
+
+
+
+    //
+    // Set the clocking to run directly from the crystal.
+    //
+    SysCtlClockSet(SYSCTL_SYSDIV_1 | SYSCTL_USE_OSC | SYSCTL_OSC_MAIN |
+                   SYSCTL_XTAL_8MHZ);
+
+    //
+    // Initialize the UART for debug output.
+    //
+    SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOA);
+    GPIOPinTypeUART(GPIO_PORTA_BASE, GPIO_PIN_0 | GPIO_PIN_1);
+    UARTStdioInit(0);
+
+    //
+    // Initialize the OLED display.
+    //
+    //RIT128x96x4Init(1000000);
+    //RIT128x96x4StringDraw("Ethernet with lwIP", 12, 0, 15);
+
+    //
+    // Enable and Reset the Ethernet Controller.
+    //
+    SysCtlPeripheralEnable(SYSCTL_PERIPH_ETH);
+    SysCtlPeripheralReset(SYSCTL_PERIPH_ETH);
+
+    //
+    // Enable Port F for Ethernet LEDs.
+    //  LED0        Bit 3   Output
+    //  LED1        Bit 2   Output
+    //
+    SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOF);
+    GPIOPinTypeEthernetLED(GPIO_PORTF_BASE, GPIO_PIN_2 | GPIO_PIN_3);
+
+    //g_pucDisplayStr[0] = '0';
+    g_uiNewMsg = 0;
+
+    //
+    // Configure SysTick for a periodic interrupt.
+    //
+    SysTickPeriodSet(SysCtlClockGet() / SYSTICKHZ);
+    SysTickEnable();
+    SysTickIntEnable();
+
+    //
+    // Enable processor interrupts.
+    //
+    IntMasterEnable();
+
+    //
+    // Initialize the file system.
+    //
+    RIT128x96x4Disable();
+    //fs_init();
+
+    //
+    // Configure the hardware MAC address for Ethernet Controller filtering of
+    // incoming packets.
+    //
+    // For the LM3S6965 Evaluation Kit, the MAC address will be stored in the
+    // non-volatile USER0 and USER1 registers.  These registers can be read
+    // using the FlashUserGet function, as illustrated below.
+    //
+    FlashUserGet(&ulUser0, &ulUser1);
+    if((ulUser0 == 0xffffffff) || (ulUser1 == 0xffffffff))
+    {
+        //
+        // We should never get here.  This is an error if the MAC address has
+        // not been programmed into the device.  Exit the program.
+        //
+        //RIT128x96x4Enable(1000000);
+        //RIT128x96x4StringDraw("MAC Address", 0, 16, 15);
+        //RIT128x96x4StringDraw("Not Programmed!", 0, 24, 15);
+        while(1)
+        {
+        }
+    }
+
+    //
+    // Convert the 24/24 split MAC address from NV ram into a 32/16 split MAC
+    // address needed to program the hardware registers, then program the MAC
+    // address into the Ethernet Controller registers.
+    //
+    pucMACArray[0] = ((ulUser0 >>  0) & 0xff);
+    pucMACArray[1] = ((ulUser0 >>  8) & 0xff);
+    pucMACArray[2] = ((ulUser0 >> 16) & 0xff);
+    pucMACArray[3] = ((ulUser1 >>  0) & 0xff);
+    pucMACArray[4] = ((ulUser1 >>  8) & 0xff);
+    pucMACArray[5] = ((ulUser1 >> 16) & 0xff);
+
+    //
+    // Initialze the lwIP library, using DHCP.
+    //
+    g_uinotSent = 0;
+    lwIPInit(pucMACArray, 0, 0, 0, IPADDR_USE_DHCP);
+
+    //
+    // Setup the device locator service.
+    //
+    LocatorInit();
+    LocatorMACAddrSet(pucMACArray);
+    LocatorAppTitleSet("EK-LM3S8962 enet_lwip");
+
+    //
+    // Indicate that DHCP has started.
+    //
+   /* RIT128x96x4Enable(1000000);
+    RIT128x96x4StringDraw("Waiting for IP", 0, 16, 15);
+    RIT128x96x4StringDraw("<                   > ", 0, 24, 15);
+    RIT128x96x4Disable();
+
+    g_pucDisplayStr[0] = 'N';
+    g_pucDisplayStr[1] = 'o';
+    g_pucDisplayStr[2] = ' ';
+    g_pucDisplayStr[3] = 'M';
+    g_pucDisplayStr[4] = 's';
+    g_pucDisplayStr[5] = 'g';
+    g_pucDisplayStr[6] = '\0';
+
+    RIT128x96x4Enable(1000000);
+    RIT128x96x4StringDraw(g_pucDisplayStr, 0, 48, 15);
+    RIT128x96x4Disable();*/
+
+    //
+    // Initialize tcp port.
+    //
+    //tcp_port_init();
+
+    //
+    // Set the interrupt priorities.  We set the SysTick interrupt to a higher
+    // priority than the Ethernet interrupt to ensure that the file system
+    // tick is processed if SysTick occurs while the Ethernet handler is being
+    // processed.  This is very likely since all the TCP/IP and HTTP work is
+    // done in the context of the Ethernet interrupt.
+    //
+    IntPriorityGroupingSet(4);
+    IntPrioritySet(INT_ETH, ETHERNET_INT_PRIORITY);
+    IntPrioritySet(FAULT_SYSTICK, SYSTICK_INT_PRIORITY);
+
+        UARTprintf("enet_lwip\n");
+
+    //
+    // Loop forever.  All the work is done in interrupt handlers.
+    //
+
+    while(1)
+    {
+    	if(g_uinotSent){
+    		tcp_setup();
+    		g_uinotSent = 0;
+    	}
+    }
+}
+
+void tcp_setup(void)
+{
+    unsigned int data = 0xdeadbeef;
+    struct tcp_pcb *testpcb;
+
+    // create an ip
+    struct ip_addr ip;
+    //IP4_ADDR(&ip, 192,168,2,2);    //IP of my server
+    IP4_ADDR(&ip, 173,194,64,141);
+
+    //create the control block
+    testpcb = tcp_new();    //testpcb is a global struct tcp_pcb
+                            // as defined by lwIP
+
+
+    //dummy data to pass to callbacks
+    tcp_arg(testpcb, &data);
+
+    //register callbacks with the pcb
+    tcp_err( testpcb, tcpErrCallback );
+    tcp_recv(testpcb, tcpRecvCallback);
+    tcp_sent(testpcb, tcpSendCallback);
+
+    //now connect
+    tcp_connect(testpcb, &ip, 80, connectCallback);
+    UARTprintf("Tcp_Setup.\n");
+
+}
+
+/* connection established callback, err is unused and only return 0 */
+err_t connectCallback(void *arg, struct tcp_pcb *tpcb, err_t err)
+{
+    UARTprintf("Connection Established.\n");
+    UARTprintf("Now sending a packet\n");
+    tcp_send_packet(tpcb);
+    return 0;
+}
+
+unsigned int tcp_send_packet(struct tcp_pcb *testpcb)
+{
+   // char *string =  "Rahul\n";
+    //char *request = "GET / HTTP/1.1\r\nHost: 192.168.2.2:9000\r\n\r\n";
+    char *request = "GET / HTTP/1.1\r\nHost: kithookup.appspot.com\r\n\r\n";
+
+    unsigned int len = ustrlen(request);
+    UARTprintf("length: %d\n",len);
+    //push to buffer
+    err_t error = tcp_write(testpcb, request, len, TCP_WRITE_FLAG_COPY);
+
+    if (error) {
+        UARTprintf("ERROR: Code: %d (tcp_send_packet :: tcp_write)\n", error);
+        return 1;
+    }
+
+    /* now send */
+    error = tcp_output(testpcb);
+    if (error) {
+        UARTprintf("ERROR: Code: %d (tcp_send_packet :: tcp_output)\n", error);
+        return 1;
+    }
+    return 0;
+}
+
+err_t tcpRecvCallback(void *arg, struct tcp_pcb *tpcb, struct pbuf *p, err_t err)
+{
+    UARTprintf("Data recieved.\n");
+    if (p == NULL) {
+        UARTprintf("The remote host closed the connection.\n");
+        UARTprintf("Now I'm closing the connection.\n");
+        close_conn(tpcb);
+        return ERR_ABRT;
+    } else {
+        UARTprintf("Number of pbufs %d\n", pbuf_clen(p));
+        UARTprintf("Contents of pbuf %s\n", (char *)p->payload);
+    }
+
+    return 0;
+}
+
+err_t tcpSendCallback(void *arg, struct tcp_pcb *tpcb, u16_t len)
+{
+    UARTprintf("Data Sent. Length: %d\n", len);
+
+    return 0;
+}
+
+void tcpErrCallback(void *arg, err_t err)
+{
+    UARTprintf("Err Callback recieved. %d\n",err);
+
+}
+
+// Intialise the TCP variables
+/*void
+init_tcp_variables( void )
+{
+    unsigned char i;
+
+    tcp_flag = false;
+    tcp_command_ready = false;
+    tcp_count = 0;
+    update_ip_flag = 0;
+    for( i = 0; i < 12; i++ )
+        ip_buffer[i] = 0;
+}*/
+/*
+// Intialise the TCP connection to be used
+void
+tcp_port_init( void )
+{
+	struct tcp_pcb *pcb;
+
+    // Create a new TCP Protocol Cotrol Buffer abbreviated as PCB.
+      pcb = tcp_new();
+
+    // Bind the PCB to a Port and any IP address.
+      tcp_bind( pcb, IP_ADDR_ANY, 8080 );
+
+    // Put the PCB and TCP connection on Board in listening state
+    pcb = tcp_listen( pcb );
+
+    // This function specifies the callback function that will be called when a client asks for connection with board
+    tcp_accept( pcb, connection_accept );
+}
+
+// This function gets called for accepting incoming TCP connections.
+static
+err_t connection_accept( void *arg, struct tcp_pcb *pcb, err_t err )
+{
+      LWIP_UNUSED_ARG( arg );
+      LWIP_UNUSED_ARG( err );
+
+      // Copy the PCB pointer to another PCB pointer, which will be used later for sending data.
+      //data_pcb = pcb;
+
+      tcp_setprio( pcb, TCP_PRIO_MIN );
+
+      // Specifies the function to call, on reception of data on TCP
+      tcp_recv( pcb, tcp_data_receive );
+
+      tcp_err( pcb, NULL );
+      tcp_poll( pcb, NULL, 4 );
+
+      return ERR_OK;
+}
+
+// This function gets called on reception of data on TCP.
+static
+err_t tcp_data_receive( void *arg, struct tcp_pcb *pcb, struct pbuf *p, err_t err )
+{
+    unsigned int i,k;
+    unsigned int len;
+    unsigned char *pc;
+
+    // Check if no error has occured and packet buffer is not empty
+    if ( err == ERR_OK && p != NULL )
+    {
+
+        //When the application has taken the data, it has to call the tcp_recved()
+        //function to indicate that TCP can advertise increase the receive window.(N.B. As specified by LWIP).
+
+        tcp_recved( pcb, p->tot_len );
+
+        // Get the pointer to the Payload area of received TCP packet
+        pc = ( unsigned char * )p->payload;
+
+        // Get the length of the data payload and assign it to our data count variable
+        len = p->tot_len;
+
+       // The data can be taken in this part as "pc" will contain the starting address of the payload.
+       //Just use the "pc" pointer and get the data in your buffer.
+        k = 0;
+        while(k<len && k<64){
+        	g_pucDisplayStr[k] = pc[k];
+        	k++;
+        }
+        while(k<64){
+        	g_pucDisplayStr[k] = ' ';
+        	k++;
+        }
+        g_uiNewMsg = 1;
+
+        // Free the packet buffer
+        pbuf_free( p );
+
+    }
+    else
+    {
+        // Free the packet buffer
+        pbuf_free( p );
+    }
+
+    // Close connection if empty packet and no error
+    if ( err == ERR_OK && p == NULL )
+    {
+           close_conn( pcb );
+    }
+
+    return ERR_OK;
+}
+*/
+// Function for closing the connection.
+static
+void close_conn( struct tcp_pcb *pcb )
+{
+    tcp_arg    ( pcb, NULL );
+    tcp_sent( pcb, NULL );
+    tcp_recv( pcb, NULL );
+    tcp_close( pcb );
+}

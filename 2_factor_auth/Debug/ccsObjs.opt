@@ -1,0 +1,1 @@
+"./drivers/rit128x96x4.obj" "./utils/ustdlib.obj" "./utils/uartstdio.obj" "./utils/lwiplib.obj" "./utils/locator.obj" "./two_fac_auth.obj" "./startup_ccs.obj" "./solenoid.obj" "./http.obj" "./display.obj" "./buttons.obj" -l"libc.a" -l"C:\StellarisWare\driverlib\rvmdk-cm3\driverlib-cm3.lib" "../lm3s8962.cmd" 
