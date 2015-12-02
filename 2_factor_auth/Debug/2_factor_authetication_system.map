@@ -1,82 +1,82 @@
 ******************************************************************************
                   TMS470 Linker PC v4.9.5                      
 ******************************************************************************
->> Linked Thu Nov 26 16:37:25 2015
+>> Linked Wed Dec 02 13:00:42 2015
 
 OUTPUT FILE NAME:   <2_factor_authetication_system.out>
-ENTRY POINT SYMBOL: "_c_int00"  address: 0000ae4d
+ENTRY POINT SYMBOL: "_c_int00"  address: 0000c17d
 
 
 MEMORY CONFIGURATION
 
          name            origin    length      used     unused   attr    fill
 ----------------------  --------  ---------  --------  --------  ----  --------
-  FLASH                 00000000   00040000  0000c47e  00033b82  R  X
-  SRAM                  20000000   00010000  00008b5d  000074a3  RW X
+  FLASH                 00000000   00040000  0000d872  0003278e  R  X
+  SRAM                  20000000   00010000  00008fa9  00007057  RW X
 
 
 SEGMENT ALLOCATION MAP
 
 run origin  load origin   length   init length attrs members
 ----------  ----------- ---------- ----------- ----- -------
-00000000    00000000    0000b7fe   0000b7fe    r-x
+00000000    00000000    0000cc00   0000cc00    r-x
   00000000    00000000    000000f0   000000f0    r-- .intvecs
-  000000f0    000000f0    0000b00e   0000b00e    r-x .text
-  0000b100    0000b100    0000032c   0000032c    r-- .const
-  0000b42c    0000b42c    000002d8   000002d8    r-- .constdata
-  0000b704    0000b704    000000b0   000000b0    r-x i.GPIOPadConfigSet
-  0000b7b4    0000b7b4    0000004a   0000004a    r-x i.SSIConfigSetExpClk
-0000b800    0000b800    0000026c   0000026c    rw-
-  0000b800    0000b800    0000026c   0000026c    rw- vtable
-0000ba6c    0000ba6c    00000a1c   00000a1c    r-x
-  0000ba6c    0000ba6c    000001e8   000001e8    r-x i.SysCtlClockGet
-  0000bc54    0000bc54    00000156   00000156    r-x i.SysCtlClockSet
-  0000bdac    0000bdac    00000078   00000078    r-x i.SysCtlPeripheralReset
-  0000be24    0000be24    00000070   00000070    r-x i.SysCtlPeripheralPresent
-  0000be94    0000be94    0000006e   0000006e    r-x i.UARTConfigSetExpClk
-  0000bf04    0000bf04    00000064   00000064    r-x i.IntEnable
-  0000bf68    0000bf68    00000050   00000050    r-x i.SysCtlPeripheralEnable
-  0000bfb8    0000bfb8    00000038   00000038    r-x i.FlashUserGet
-  0000bff0    0000bff0    00000036   00000036    r-x i.EthernetMACAddrSet
-  0000c026    0000c026    00000032   00000032    r-x i.EthernetMACAddrGet
-  0000c058    0000c058    0000002e   0000002e    r-x .emb_text
-  0000c086    0000c086    0000002a   0000002a    r-x i.EthernetConfigSet
-  0000c0b0    0000c0b0    00000028   00000028    r-x i.GPIODirModeSet
-  0000c0d8    0000c0d8    00000028   00000028    r-x i.IntPrioritySet
-  0000c100    0000c100    00000022   00000022    r-x i.EthernetEnable
-  0000c122    0000c122    00000022   00000022    r-x i.EthernetPHYRead
-  0000c144    0000c144    0000001c   0000001c    r-x i.GPIOPinTypeEthernetLED
-  0000c160    0000c160    0000001c   0000001c    r-x i.GPIOPinTypeGPIOInput
-  0000c17c    0000c17c    0000001c   0000001c    r-x i.GPIOPinTypeGPIOOutput
-  0000c198    0000c198    0000001c   0000001c    r-x i.GPIOPinTypeSSI
-  0000c1b4    0000c1b4    0000001c   0000001c    r-x i.GPIOPinTypeUART
-  0000c1d0    0000c1d0    0000001c   0000001c    r-x i.IntPriorityGroupingSet
-  0000c1ec    0000c1ec    00000014   00000014    r-x i.SSIDataGetNonBlocking
-  0000c200    0000c200    00000014   00000014    r-x i.UARTEnable
-  0000c214    0000c214    00000010   00000010    r-x i.EthernetInitExpClk
-  0000c224    0000c224    0000000e   0000000e    r-x i.EthernetIntStatus
-  0000c232    0000c232    0000000e   0000000e    r-x i.SysTickEnable
-  0000c240    0000c240    0000000e   0000000e    r-x i.SysTickIntEnable
-  0000c24e    0000c24e    0000000c   0000000c    r-x i.SSIDataPut
-  0000c25a    0000c25a    0000000c   0000000c    r-x i.UARTCharGet
-  0000c266    0000c266    0000000c   0000000c    r-x i.UARTCharPut
-  0000c272    0000c272    0000000a   0000000a    r-x i.EthernetIntDisable
-  0000c27c    0000c27c    0000000a   0000000a    r-x i.IntMasterDisable
-  0000c286    0000c286    0000000a   0000000a    r-x i.IntMasterEnable
-  0000c290    0000c290    0000000a   0000000a    r-x i.SSIDisable
-  0000c29a    0000c29a    0000000a   0000000a    r-x i.SSIEnable
-  0000c2a4    0000c2a4    0000000a   0000000a    r-x i.SysTickPeriodSet
-  0000c2ae    0000c2ae    00000008   00000008    r-x i.EthernetIntEnable
-  0000c2b6    0000c2b6    00000008   00000008    r-x i.SSIBusy
-  0000c2be    0000c2be    00000006   00000006    r-x i.GPIOPinRead
-  0000c2c4    0000c2c4    00000006   00000006    r-x i.GPIOPinWrite
-  0000c2ca    0000c2ca    00000004   00000004    r-x i.EthernetIntClear
-  0000c2d0    0000c2d0    000001b8   000001b8    r-- .cinit
-20000000    20000000    00008940   00000000    rw-
-  20000000    20000000    00008540   00000000    rw- .bss
-  20008540    20008540    00000400   00000000    rw- .stack
-20008940    20008940    0000021d   0000021d    rw-
-  20008940    20008940    0000021d   0000021d    rw- .data
+  000000f0    000000f0    0000c33e   0000c33e    r-x .text
+  0000c430    0000c430    000003e8   000003e8    r-- .const
+  0000c818    0000c818    000002d8   000002d8    r-- .constdata
+  0000caf0    0000caf0    000000b0   000000b0    r-x i.GPIOPadConfigSet
+  0000cba0    0000cba0    00000050   00000050    r-x i.SysCtlPeripheralEnable
+  0000cbf0    0000cbf0    00000010   00000010    r-x i.EthernetInitExpClk
+0000cc00    0000cc00    0000026c   0000026c    rw-
+  0000cc00    0000cc00    0000026c   0000026c    rw- vtable
+0000ce6c    0000ce6c    00000a14   00000a14    r-x
+  0000ce6c    0000ce6c    000001e8   000001e8    r-x i.SysCtlClockGet
+  0000d054    0000d054    00000156   00000156    r-x i.SysCtlClockSet
+  0000d1ac    0000d1ac    00000078   00000078    r-x i.SysCtlPeripheralReset
+  0000d224    0000d224    00000070   00000070    r-x i.SysCtlPeripheralPresent
+  0000d294    0000d294    0000006e   0000006e    r-x i.UARTConfigSetExpClk
+  0000d304    0000d304    00000064   00000064    r-x i.IntEnable
+  0000d368    0000d368    0000004a   0000004a    r-x i.SSIConfigSetExpClk
+  0000d3b4    0000d3b4    00000038   00000038    r-x i.FlashUserGet
+  0000d3ec    0000d3ec    00000036   00000036    r-x i.EthernetMACAddrSet
+  0000d422    0000d422    00000032   00000032    r-x i.EthernetMACAddrGet
+  0000d454    0000d454    0000002e   0000002e    r-x .emb_text
+  0000d482    0000d482    0000002a   0000002a    r-x i.EthernetConfigSet
+  0000d4ac    0000d4ac    00000028   00000028    r-x i.GPIODirModeSet
+  0000d4d4    0000d4d4    00000028   00000028    r-x i.IntPrioritySet
+  0000d4fc    0000d4fc    00000022   00000022    r-x i.EthernetEnable
+  0000d51e    0000d51e    00000022   00000022    r-x i.EthernetPHYRead
+  0000d540    0000d540    0000001c   0000001c    r-x i.GPIOPinTypeEthernetLED
+  0000d55c    0000d55c    0000001c   0000001c    r-x i.GPIOPinTypeGPIOInput
+  0000d578    0000d578    0000001c   0000001c    r-x i.GPIOPinTypeGPIOOutput
+  0000d594    0000d594    0000001c   0000001c    r-x i.GPIOPinTypeSSI
+  0000d5b0    0000d5b0    0000001c   0000001c    r-x i.GPIOPinTypeUART
+  0000d5cc    0000d5cc    0000001c   0000001c    r-x i.IntPriorityGroupingSet
+  0000d5e8    0000d5e8    00000014   00000014    r-x i.SSIDataGetNonBlocking
+  0000d5fc    0000d5fc    00000014   00000014    r-x i.UARTEnable
+  0000d610    0000d610    0000000e   0000000e    r-x i.EthernetIntStatus
+  0000d61e    0000d61e    0000000e   0000000e    r-x i.SysTickEnable
+  0000d62c    0000d62c    0000000e   0000000e    r-x i.SysTickIntEnable
+  0000d63a    0000d63a    0000000c   0000000c    r-x i.SSIDataPut
+  0000d646    0000d646    0000000c   0000000c    r-x i.UARTCharGet
+  0000d652    0000d652    0000000c   0000000c    r-x i.UARTCharPut
+  0000d65e    0000d65e    0000000a   0000000a    r-x i.EthernetIntDisable
+  0000d668    0000d668    0000000a   0000000a    r-x i.IntMasterDisable
+  0000d672    0000d672    0000000a   0000000a    r-x i.IntMasterEnable
+  0000d67c    0000d67c    0000000a   0000000a    r-x i.SSIDisable
+  0000d686    0000d686    0000000a   0000000a    r-x i.SSIEnable
+  0000d690    0000d690    0000000a   0000000a    r-x i.SysTickPeriodSet
+  0000d69a    0000d69a    00000008   00000008    r-x i.EthernetIntEnable
+  0000d6a2    0000d6a2    00000008   00000008    r-x i.SSIBusy
+  0000d6aa    0000d6aa    00000006   00000006    r-x i.GPIOPinRead
+  0000d6b0    0000d6b0    00000006   00000006    r-x i.GPIOPinWrite
+  0000d6b6    0000d6b6    00000004   00000004    r-x i.EthernetIntClear
+  0000d6c0    0000d6c0    000001c0   000001c0    r-- .cinit
+20000000    20000000    00008d48   00000000    rw-
+  20000000    20000000    00008948   00000000    rw- .bss
+  20008948    20008948    00000400   00000000    rw- .stack
+20008d48    20008d48    00000261   00000261    rw-
+  20008d48    20008d48    00000261   00000261    rw- .data
 
 
 SECTION ALLOCATION MAP
@@ -90,376 +90,386 @@ section   page    origin      length       input sections
 .init_array 
 *          0    00000000    00000000     UNINITIALIZED
 
-.text      0    000000f0    0000b00e     
+.text      0    000000f0    0000c33e     
                   000000f0    000094dc     lwiplib.obj (.text)
-                  000095cc    00000568     display.obj (.text)
-                  00009b34    00000510     rit128x96x4.obj (.text)
-                  0000a044    00000480     uartstdio.obj (.text)
-                  0000a4c4    00000330     two_fac_auth.obj (.text)
-                  0000a7f4    0000029c     locator.obj (.text)
-                  0000aa90    00000128     buttons.obj (.text)
-                  0000abb8    0000009c     rtsv7M3_T_le_eabi.lib : memcpy_t2.obj (.text)
-                  0000ac54    00000094                           : auto_init.obj (.text)
-                  0000ace8    00000078                           : memset_t2.obj (.text)
-                  0000ad60    0000005e                           : copy_decompress_rle.obj (.text)
-                  0000adbe    00000002     --HOLE-- [fill = 0]
-                  0000adc0    00000048                           : cpy_tbl.obj (.text)
-                  0000ae08    00000044                           : exit.obj (.text)
-                  0000ae4c    00000034                           : boot.obj (.text)
-                  0000ae80    00000022                           : memcmp.obj (.text)
-                  0000aea2    00000002     --HOLE-- [fill = 0]
-                  0000aea4    00000018                           : _lock.obj (.text)
-                  0000aebc    00000018                           : args_main.obj (.text)
-                  0000aed4    00000012                           : copy_zero_init.obj (.text:decompress:ZI)
-                  0000aee6    0000000e                           : copy_decompress_none.obj (.text:decompress:none)
-                  0000aef4    0000000c     startup_ccs.obj (.text)
-                  0000af00    00000006     rtsv7M3_T_le_eabi.lib : copy_decompress_rle.obj (.text:decompress:rle24)
-                  0000af06    00000002     --HOLE-- [fill = 0]
-                  0000af08    0000000a     driverlib-cm3.lib : gpio.o (.tramp.GPIOPinTypeGPIOInput.1)
-                  0000af12    00000002     --HOLE-- [fill = 0]
-                  0000af14    0000000a                       : interrupt.o (.tramp.IntPrioritySet.1)
-                  0000af1e    00000002     --HOLE-- [fill = 0]
-                  0000af20    0000000a                       : interrupt.o (.tramp.IntPriorityGroupingSet.1)
-                  0000af2a    00000002     --HOLE-- [fill = 0]
-                  0000af2c    0000000a                       : flash.o (.tramp.FlashUserGet.1)
-                  0000af36    00000002     --HOLE-- [fill = 0]
-                  0000af38    0000000a                       : gpio.o (.tramp.GPIOPinTypeEthernetLED.1)
-                  0000af42    00000002     --HOLE-- [fill = 0]
-                  0000af44    0000000a                       : sysctl.o (.tramp.SysCtlPeripheralReset.1)
-                  0000af4e    00000002     --HOLE-- [fill = 0]
-                  0000af50    0000000a                       : systick.o (.tramp.SysTickIntEnable.1)
-                  0000af5a    00000002     --HOLE-- [fill = 0]
-                  0000af5c    0000000a                       : systick.o (.tramp.SysTickEnable.1)
-                  0000af66    00000002     --HOLE-- [fill = 0]
-                  0000af68    0000000a                       : systick.o (.tramp.SysTickPeriodSet.1)
-                  0000af72    00000002     --HOLE-- [fill = 0]
-                  0000af74    0000000a                       : gpio.o (.tramp.GPIOPinTypeUART.1)
-                  0000af7e    00000002     --HOLE-- [fill = 0]
-                  0000af80    0000000a                       : sysctl.o (.tramp.SysCtlClockSet.1)
-                  0000af8a    00000002     --HOLE-- [fill = 0]
-                  0000af8c    0000000a                       : gpio.o (.tramp.GPIOPinRead.1)
-                  0000af96    00000002     --HOLE-- [fill = 0]
-                  0000af98    0000000a                       : uart.o (.tramp.UARTCharGet.1)
-                  0000afa2    00000002     --HOLE-- [fill = 0]
-                  0000afa4    0000000a                       : uart.o (.tramp.UARTCharPut.1)
-                  0000afae    00000002     --HOLE-- [fill = 0]
-                  0000afb0    0000000a                       : uart.o (.tramp.UARTEnable.1)
-                  0000afba    00000002     --HOLE-- [fill = 0]
-                  0000afbc    0000000a                       : uart.o (.tramp.UARTConfigSetExpClk.1)
-                  0000afc6    00000002     --HOLE-- [fill = 0]
-                  0000afc8    0000000a                       : sysctl.o (.tramp.SysCtlPeripheralPresent.1)
-                  0000afd2    00000002     --HOLE-- [fill = 0]
-                  0000afd4    0000000a                       : gpio.o (.tramp.GPIOPinTypeGPIOOutput.1)
-                  0000afde    00000002     --HOLE-- [fill = 0]
-                  0000afe0    0000000a                       : ssi.o (.tramp.SSIDataGetNonBlocking.1)
-                  0000afea    00000002     --HOLE-- [fill = 0]
-                  0000afec    0000000a                       : ssi.o (.tramp.SSIEnable.1)
-                  0000aff6    00000002     --HOLE-- [fill = 0]
-                  0000aff8    0000000a                       : gpio.o (.tramp.GPIOPadConfigSet.1)
-                  0000b002    00000002     --HOLE-- [fill = 0]
-                  0000b004    0000000a                       : gpio.o (.tramp.GPIOPinTypeSSI.1)
-                  0000b00e    00000002     --HOLE-- [fill = 0]
-                  0000b010    0000000a                       : ssi.o (.tramp.SSIConfigSetExpClk.1)
-                  0000b01a    00000002     --HOLE-- [fill = 0]
-                  0000b01c    0000000a                       : ssi.o (.tramp.SSIDisable.1)
-                  0000b026    00000002     --HOLE-- [fill = 0]
-                  0000b028    0000000a                       : ssi.o (.tramp.SSIDataPut.1)
-                  0000b032    00000002     --HOLE-- [fill = 0]
-                  0000b034    0000000a                       : gpio.o (.tramp.GPIOPinWrite.1)
-                  0000b03e    00000002     --HOLE-- [fill = 0]
-                  0000b040    0000000a                       : ssi.o (.tramp.SSIBusy.1)
-                  0000b04a    00000002     --HOLE-- [fill = 0]
-                  0000b04c    0000000a                       : ethernet.o (.tramp.EthernetMACAddrSet.1)
-                  0000b056    00000002     --HOLE-- [fill = 0]
-                  0000b058    0000000a                       : sysctl.o (.tramp.SysCtlPeripheralEnable.1)
-                  0000b062    00000002     --HOLE-- [fill = 0]
-                  0000b064    0000000a                       : ethernet.o (.tramp.EthernetPHYRead.1)
-                  0000b06e    00000002     --HOLE-- [fill = 0]
-                  0000b070    0000000a                       : ethernet.o (.tramp.EthernetIntEnable.1)
-                  0000b07a    00000002     --HOLE-- [fill = 0]
-                  0000b07c    0000000a                       : interrupt.o (.tramp.IntEnable.1)
-                  0000b086    00000002     --HOLE-- [fill = 0]
-                  0000b088    0000000a                       : ethernet.o (.tramp.EthernetEnable.1)
-                  0000b092    00000002     --HOLE-- [fill = 0]
-                  0000b094    0000000a                       : ethernet.o (.tramp.EthernetConfigSet.1)
-                  0000b09e    00000002     --HOLE-- [fill = 0]
-                  0000b0a0    0000000a                       : ethernet.o (.tramp.EthernetInitExpClk.1)
-                  0000b0aa    00000002     --HOLE-- [fill = 0]
-                  0000b0ac    0000000a                       : sysctl.o (.tramp.SysCtlClockGet.1)
-                  0000b0b6    00000002     --HOLE-- [fill = 0]
-                  0000b0b8    0000000a                       : ethernet.o (.tramp.EthernetIntClear.1)
-                  0000b0c2    00000002     --HOLE-- [fill = 0]
-                  0000b0c4    0000000a                       : ethernet.o (.tramp.EthernetIntStatus.1)
-                  0000b0ce    00000002     --HOLE-- [fill = 0]
-                  0000b0d0    0000000a                       : ethernet.o (.tramp.EthernetIntDisable.1)
-                  0000b0da    00000002     --HOLE-- [fill = 0]
-                  0000b0dc    0000000a                       : ethernet.o (.tramp.EthernetMACAddrGet.1)
-                  0000b0e6    00000002     --HOLE-- [fill = 0]
-                  0000b0e8    0000000a                       : interrupt.o (.tramp.IntMasterEnable.1)
-                  0000b0f2    00000002     --HOLE-- [fill = 0]
-                  0000b0f4    0000000a                       : interrupt.o (.tramp.IntMasterDisable.1)
+                  000095cc    00000a1c     ustdlib.obj (.text)
+                  00009fe8    00000924     display.obj (.text)
+                  0000a90c    00000524     two_fac_auth.obj (.text)
+                  0000ae30    00000510     rit128x96x4.obj (.text)
+                  0000b340    00000480     uartstdio.obj (.text)
+                  0000b7c0    00000364     tcp.obj (.text)
+                  0000bb24    0000029c     locator.obj (.text)
+                  0000bdc0    00000128     buttons.obj (.text)
+                  0000bee8    0000009c     rtsv7M3_T_le_eabi.lib : memcpy_t2.obj (.text)
+                  0000bf84    00000094                           : auto_init.obj (.text)
+                  0000c018    00000078                           : memset_t2.obj (.text)
+                  0000c090    0000005e                           : copy_decompress_rle.obj (.text)
+                  0000c0ee    00000002     --HOLE-- [fill = 0]
+                  0000c0f0    00000048                           : cpy_tbl.obj (.text)
+                  0000c138    00000044                           : exit.obj (.text)
+                  0000c17c    00000034                           : boot.obj (.text)
+                  0000c1b0    00000022                           : memcmp.obj (.text)
+                  0000c1d2    00000002     --HOLE-- [fill = 0]
+                  0000c1d4    00000018                           : _lock.obj (.text)
+                  0000c1ec    00000018                           : args_main.obj (.text)
+                  0000c204    00000012                           : copy_zero_init.obj (.text:decompress:ZI)
+                  0000c216    0000000e                           : copy_decompress_none.obj (.text:decompress:none)
+                  0000c224    0000000c     startup_ccs.obj (.text)
+                  0000c230    00000006     rtsv7M3_T_le_eabi.lib : copy_decompress_rle.obj (.text:decompress:rle24)
+                  0000c236    00000002     --HOLE-- [fill = 0]
+                  0000c238    0000000a     driverlib-cm3.lib : gpio.o (.tramp.GPIOPinTypeGPIOInput.1)
+                  0000c242    00000002     --HOLE-- [fill = 0]
+                  0000c244    0000000a                       : uart.o (.tramp.UARTCharGet.1)
+                  0000c24e    00000002     --HOLE-- [fill = 0]
+                  0000c250    0000000a                       : uart.o (.tramp.UARTCharPut.1)
+                  0000c25a    00000002     --HOLE-- [fill = 0]
+                  0000c25c    0000000a                       : uart.o (.tramp.UARTEnable.1)
+                  0000c266    00000002     --HOLE-- [fill = 0]
+                  0000c268    0000000a                       : uart.o (.tramp.UARTConfigSetExpClk.1)
+                  0000c272    00000002     --HOLE-- [fill = 0]
+                  0000c274    0000000a                       : sysctl.o (.tramp.SysCtlPeripheralPresent.1)
+                  0000c27e    00000002     --HOLE-- [fill = 0]
+                  0000c280    0000000a                       : gpio.o (.tramp.GPIOPinTypeGPIOOutput.1)
+                  0000c28a    00000002     --HOLE-- [fill = 0]
+                  0000c28c    0000000a                       : ssi.o (.tramp.SSIDataGetNonBlocking.1)
+                  0000c296    00000002     --HOLE-- [fill = 0]
+                  0000c298    0000000a                       : ssi.o (.tramp.SSIEnable.1)
+                  0000c2a2    00000002     --HOLE-- [fill = 0]
+                  0000c2a4    0000000a                       : gpio.o (.tramp.GPIOPadConfigSet.1)
+                  0000c2ae    00000002     --HOLE-- [fill = 0]
+                  0000c2b0    0000000a                       : gpio.o (.tramp.GPIOPinTypeSSI.1)
+                  0000c2ba    00000002     --HOLE-- [fill = 0]
+                  0000c2bc    0000000a                       : ssi.o (.tramp.SSIConfigSetExpClk.1)
+                  0000c2c6    00000002     --HOLE-- [fill = 0]
+                  0000c2c8    0000000a                       : ssi.o (.tramp.SSIDisable.1)
+                  0000c2d2    00000002     --HOLE-- [fill = 0]
+                  0000c2d4    0000000a                       : ssi.o (.tramp.SSIDataPut.1)
+                  0000c2de    00000002     --HOLE-- [fill = 0]
+                  0000c2e0    0000000a                       : gpio.o (.tramp.GPIOPinWrite.1)
+                  0000c2ea    00000002     --HOLE-- [fill = 0]
+                  0000c2ec    0000000a                       : ssi.o (.tramp.SSIBusy.1)
+                  0000c2f6    00000002     --HOLE-- [fill = 0]
+                  0000c2f8    0000000a                       : interrupt.o (.tramp.IntPrioritySet.1)
+                  0000c302    00000002     --HOLE-- [fill = 0]
+                  0000c304    0000000a                       : interrupt.o (.tramp.IntPriorityGroupingSet.1)
+                  0000c30e    00000002     --HOLE-- [fill = 0]
+                  0000c310    0000000a                       : flash.o (.tramp.FlashUserGet.1)
+                  0000c31a    00000002     --HOLE-- [fill = 0]
+                  0000c31c    0000000a                       : gpio.o (.tramp.GPIOPinTypeEthernetLED.1)
+                  0000c326    00000002     --HOLE-- [fill = 0]
+                  0000c328    0000000a                       : sysctl.o (.tramp.SysCtlPeripheralReset.1)
+                  0000c332    00000002     --HOLE-- [fill = 0]
+                  0000c334    0000000a                       : systick.o (.tramp.SysTickIntEnable.1)
+                  0000c33e    00000002     --HOLE-- [fill = 0]
+                  0000c340    0000000a                       : systick.o (.tramp.SysTickEnable.1)
+                  0000c34a    00000002     --HOLE-- [fill = 0]
+                  0000c34c    0000000a                       : systick.o (.tramp.SysTickPeriodSet.1)
+                  0000c356    00000002     --HOLE-- [fill = 0]
+                  0000c358    0000000a                       : gpio.o (.tramp.GPIOPinTypeUART.1)
+                  0000c362    00000002     --HOLE-- [fill = 0]
+                  0000c364    0000000a                       : sysctl.o (.tramp.SysCtlClockSet.1)
+                  0000c36e    00000002     --HOLE-- [fill = 0]
+                  0000c370    0000000a                       : gpio.o (.tramp.GPIOPinRead.1)
+                  0000c37a    00000002     --HOLE-- [fill = 0]
+                  0000c37c    0000000a                       : ethernet.o (.tramp.EthernetMACAddrSet.1)
+                  0000c386    00000002     --HOLE-- [fill = 0]
+                  0000c388    0000000a                       : sysctl.o (.tramp.SysCtlPeripheralEnable.1)
+                  0000c392    00000002     --HOLE-- [fill = 0]
+                  0000c394    0000000a                       : ethernet.o (.tramp.EthernetPHYRead.1)
+                  0000c39e    00000002     --HOLE-- [fill = 0]
+                  0000c3a0    0000000a                       : ethernet.o (.tramp.EthernetIntEnable.1)
+                  0000c3aa    00000002     --HOLE-- [fill = 0]
+                  0000c3ac    0000000a                       : interrupt.o (.tramp.IntEnable.1)
+                  0000c3b6    00000002     --HOLE-- [fill = 0]
+                  0000c3b8    0000000a                       : ethernet.o (.tramp.EthernetEnable.1)
+                  0000c3c2    00000002     --HOLE-- [fill = 0]
+                  0000c3c4    0000000a                       : ethernet.o (.tramp.EthernetConfigSet.1)
+                  0000c3ce    00000002     --HOLE-- [fill = 0]
+                  0000c3d0    0000000a                       : ethernet.o (.tramp.EthernetInitExpClk.1)
+                  0000c3da    00000002     --HOLE-- [fill = 0]
+                  0000c3dc    0000000a                       : sysctl.o (.tramp.SysCtlClockGet.1)
+                  0000c3e6    00000002     --HOLE-- [fill = 0]
+                  0000c3e8    0000000a                       : ethernet.o (.tramp.EthernetIntClear.1)
+                  0000c3f2    00000002     --HOLE-- [fill = 0]
+                  0000c3f4    0000000a                       : ethernet.o (.tramp.EthernetIntStatus.1)
+                  0000c3fe    00000002     --HOLE-- [fill = 0]
+                  0000c400    0000000a                       : ethernet.o (.tramp.EthernetIntDisable.1)
+                  0000c40a    00000002     --HOLE-- [fill = 0]
+                  0000c40c    0000000a                       : ethernet.o (.tramp.EthernetMACAddrGet.1)
+                  0000c416    00000002     --HOLE-- [fill = 0]
+                  0000c418    0000000a                       : interrupt.o (.tramp.IntMasterEnable.1)
+                  0000c422    00000002     --HOLE-- [fill = 0]
+                  0000c424    0000000a                       : interrupt.o (.tramp.IntMasterDisable.1)
 
-.const     0    0000b100    0000032c     
-                  0000b100    000001e0     rit128x96x4.obj (.const:g_pucFont)
-                  0000b2e0    00000076     lwiplib.obj (.const:.string)
-                  0000b356    00000002     --HOLE-- [fill = 0]
-                  0000b358    0000004f     rit128x96x4.obj (.const:g_pucRIT128x96x4Init)
-                  0000b3a7    00000001     --HOLE-- [fill = 0]
-                  0000b3a8    00000048     lwiplib.obj (.const)
-                  0000b3f0    0000001c     uartstdio.obj (.const)
-                  0000b40c    00000012     uartstdio.obj (.const:.string)
-                  0000b41e    00000002     --HOLE-- [fill = 0]
-                  0000b420    0000000c     rit128x96x4.obj (.const)
+.const     0    0000c430    000003e8     
+                  0000c430    000001e0     rit128x96x4.obj (.const:g_pucFont)
+                  0000c610    00000076     lwiplib.obj (.const:.string)
+                  0000c686    00000002     --HOLE-- [fill = 0]
+                  0000c688    0000004f     rit128x96x4.obj (.const:g_pucRIT128x96x4Init)
+                  0000c6d7    00000001     --HOLE-- [fill = 0]
+                  0000c6d8    0000004c     two_fac_auth.obj (.const:$P$T1$3)
+                  0000c724    00000048     lwiplib.obj (.const)
+                  0000c76c    0000003f     two_fac_auth.obj (.const:$P$T0$2)
+                  0000c7ab    00000001     --HOLE-- [fill = 0]
+                  0000c7ac    0000001c     uartstdio.obj (.const)
+                  0000c7c8    0000001c     ustdlib.obj (.const)
+                  0000c7e4    00000012     uartstdio.obj (.const:.string)
+                  0000c7f6    00000002     --HOLE-- [fill = 0]
+                  0000c7f8    00000012     ustdlib.obj (.const:.string)
+                  0000c80a    00000002     --HOLE-- [fill = 0]
+                  0000c80c    0000000c     rit128x96x4.obj (.const)
 
 .constdata 
-*          0    0000b42c    000002d8     
-                  0000b42c    000001cc     driverlib-cm3.lib : sysctl.o (.constdata)
-                  0000b5f8    0000010c                       : interrupt.o (.constdata)
+*          0    0000c818    000002d8     
+                  0000c818    000001cc     driverlib-cm3.lib : sysctl.o (.constdata)
+                  0000c9e4    0000010c                       : interrupt.o (.constdata)
 
 i.GPIOPadConfigSet 
-*          0    0000b704    000000b0     
-                  0000b704    000000b0     driverlib-cm3.lib : gpio.o (i.GPIOPadConfigSet)
-
-i.SSIConfigSetExpClk 
-*          0    0000b7b4    0000004a     
-                  0000b7b4    0000004a     driverlib-cm3.lib : ssi.o (i.SSIConfigSetExpClk)
-
-vtable     0    0000b800    0000026c     
-                  0000b800    0000026c     driverlib-cm3.lib : interrupt.o (vtable)
-
-i.SysCtlClockGet 
-*          0    0000ba6c    000001e8     
-                  0000ba6c    000001e8     driverlib-cm3.lib : sysctl.o (i.SysCtlClockGet)
-
-i.SysCtlClockSet 
-*          0    0000bc54    00000156     
-                  0000bc54    0000014c     driverlib-cm3.lib : sysctl.o (i.SysCtlClockSet)
-                  0000bda0    0000000a                       : sysctl.o (.tramp.SysCtlDelay.1)
-
-i.SysCtlPeripheralReset 
-*          0    0000bdac    00000078     
-                  0000bdac    00000078     driverlib-cm3.lib : sysctl.o (i.SysCtlPeripheralReset)
-
-i.SysCtlPeripheralPresent 
-*          0    0000be24    00000070     
-                  0000be24    00000070     driverlib-cm3.lib : sysctl.o (i.SysCtlPeripheralPresent)
-
-i.UARTConfigSetExpClk 
-*          0    0000be94    0000006e     
-                  0000be94    0000006e     driverlib-cm3.lib : uart.o (i.UARTConfigSetExpClk)
-
-i.IntEnable 
-*          0    0000bf04    00000064     
-                  0000bf04    00000064     driverlib-cm3.lib : interrupt.o (i.IntEnable)
+*          0    0000caf0    000000b0     
+                  0000caf0    000000b0     driverlib-cm3.lib : gpio.o (i.GPIOPadConfigSet)
 
 i.SysCtlPeripheralEnable 
-*          0    0000bf68    00000050     
-                  0000bf68    00000050     driverlib-cm3.lib : sysctl.o (i.SysCtlPeripheralEnable)
-
-i.FlashUserGet 
-*          0    0000bfb8    00000038     
-                  0000bfb8    00000038     driverlib-cm3.lib : flash.o (i.FlashUserGet)
-
-i.EthernetMACAddrSet 
-*          0    0000bff0    00000036     
-                  0000bff0    00000036     driverlib-cm3.lib : ethernet.o (i.EthernetMACAddrSet)
-
-i.EthernetMACAddrGet 
-*          0    0000c026    00000032     
-                  0000c026    00000032     driverlib-cm3.lib : ethernet.o (i.EthernetMACAddrGet)
-
-.emb_text 
-*          0    0000c058    0000002e     
-                  0000c058    00000026     driverlib-cm3.lib : cpu.o (.emb_text)
-                  0000c07e    00000002     --HOLE-- [fill = 0]
-                  0000c080    00000006                       : sysctl.o (.emb_text)
-
-i.EthernetConfigSet 
-*          0    0000c086    0000002a     
-                  0000c086    0000002a     driverlib-cm3.lib : ethernet.o (i.EthernetConfigSet)
-
-i.GPIODirModeSet 
-*          0    0000c0b0    00000028     
-                  0000c0b0    00000028     driverlib-cm3.lib : gpio.o (i.GPIODirModeSet)
-
-i.IntPrioritySet 
-*          0    0000c0d8    00000028     
-                  0000c0d8    00000028     driverlib-cm3.lib : interrupt.o (i.IntPrioritySet)
-
-i.EthernetEnable 
-*          0    0000c100    00000022     
-                  0000c100    00000022     driverlib-cm3.lib : ethernet.o (i.EthernetEnable)
-
-i.EthernetPHYRead 
-*          0    0000c122    00000022     
-                  0000c122    00000022     driverlib-cm3.lib : ethernet.o (i.EthernetPHYRead)
-
-i.GPIOPinTypeEthernetLED 
-*          0    0000c144    0000001c     
-                  0000c144    0000001c     driverlib-cm3.lib : gpio.o (i.GPIOPinTypeEthernetLED)
-
-i.GPIOPinTypeGPIOInput 
-*          0    0000c160    0000001c     
-                  0000c160    0000001c     driverlib-cm3.lib : gpio.o (i.GPIOPinTypeGPIOInput)
-
-i.GPIOPinTypeGPIOOutput 
-*          0    0000c17c    0000001c     
-                  0000c17c    0000001c     driverlib-cm3.lib : gpio.o (i.GPIOPinTypeGPIOOutput)
-
-i.GPIOPinTypeSSI 
-*          0    0000c198    0000001c     
-                  0000c198    0000001c     driverlib-cm3.lib : gpio.o (i.GPIOPinTypeSSI)
-
-i.GPIOPinTypeUART 
-*          0    0000c1b4    0000001c     
-                  0000c1b4    0000001c     driverlib-cm3.lib : gpio.o (i.GPIOPinTypeUART)
-
-i.IntPriorityGroupingSet 
-*          0    0000c1d0    0000001c     
-                  0000c1d0    0000001c     driverlib-cm3.lib : interrupt.o (i.IntPriorityGroupingSet)
-
-i.SSIDataGetNonBlocking 
-*          0    0000c1ec    00000014     
-                  0000c1ec    00000014     driverlib-cm3.lib : ssi.o (i.SSIDataGetNonBlocking)
-
-i.UARTEnable 
-*          0    0000c200    00000014     
-                  0000c200    00000014     driverlib-cm3.lib : uart.o (i.UARTEnable)
+*          0    0000cba0    00000050     
+                  0000cba0    00000050     driverlib-cm3.lib : sysctl.o (i.SysCtlPeripheralEnable)
 
 i.EthernetInitExpClk 
-*          0    0000c214    00000010     
-                  0000c214    00000010     driverlib-cm3.lib : ethernet.o (i.EthernetInitExpClk)
+*          0    0000cbf0    00000010     
+                  0000cbf0    00000010     driverlib-cm3.lib : ethernet.o (i.EthernetInitExpClk)
+
+vtable     0    0000cc00    0000026c     
+                  0000cc00    0000026c     driverlib-cm3.lib : interrupt.o (vtable)
+
+i.SysCtlClockGet 
+*          0    0000ce6c    000001e8     
+                  0000ce6c    000001e8     driverlib-cm3.lib : sysctl.o (i.SysCtlClockGet)
+
+i.SysCtlClockSet 
+*          0    0000d054    00000156     
+                  0000d054    0000014c     driverlib-cm3.lib : sysctl.o (i.SysCtlClockSet)
+                  0000d1a0    0000000a                       : sysctl.o (.tramp.SysCtlDelay.1)
+
+i.SysCtlPeripheralReset 
+*          0    0000d1ac    00000078     
+                  0000d1ac    00000078     driverlib-cm3.lib : sysctl.o (i.SysCtlPeripheralReset)
+
+i.SysCtlPeripheralPresent 
+*          0    0000d224    00000070     
+                  0000d224    00000070     driverlib-cm3.lib : sysctl.o (i.SysCtlPeripheralPresent)
+
+i.UARTConfigSetExpClk 
+*          0    0000d294    0000006e     
+                  0000d294    0000006e     driverlib-cm3.lib : uart.o (i.UARTConfigSetExpClk)
+
+i.IntEnable 
+*          0    0000d304    00000064     
+                  0000d304    00000064     driverlib-cm3.lib : interrupt.o (i.IntEnable)
+
+i.SSIConfigSetExpClk 
+*          0    0000d368    0000004a     
+                  0000d368    0000004a     driverlib-cm3.lib : ssi.o (i.SSIConfigSetExpClk)
+
+i.FlashUserGet 
+*          0    0000d3b4    00000038     
+                  0000d3b4    00000038     driverlib-cm3.lib : flash.o (i.FlashUserGet)
+
+i.EthernetMACAddrSet 
+*          0    0000d3ec    00000036     
+                  0000d3ec    00000036     driverlib-cm3.lib : ethernet.o (i.EthernetMACAddrSet)
+
+i.EthernetMACAddrGet 
+*          0    0000d422    00000032     
+                  0000d422    00000032     driverlib-cm3.lib : ethernet.o (i.EthernetMACAddrGet)
+
+.emb_text 
+*          0    0000d454    0000002e     
+                  0000d454    00000026     driverlib-cm3.lib : cpu.o (.emb_text)
+                  0000d47a    00000002     --HOLE-- [fill = 0]
+                  0000d47c    00000006                       : sysctl.o (.emb_text)
+
+i.EthernetConfigSet 
+*          0    0000d482    0000002a     
+                  0000d482    0000002a     driverlib-cm3.lib : ethernet.o (i.EthernetConfigSet)
+
+i.GPIODirModeSet 
+*          0    0000d4ac    00000028     
+                  0000d4ac    00000028     driverlib-cm3.lib : gpio.o (i.GPIODirModeSet)
+
+i.IntPrioritySet 
+*          0    0000d4d4    00000028     
+                  0000d4d4    00000028     driverlib-cm3.lib : interrupt.o (i.IntPrioritySet)
+
+i.EthernetEnable 
+*          0    0000d4fc    00000022     
+                  0000d4fc    00000022     driverlib-cm3.lib : ethernet.o (i.EthernetEnable)
+
+i.EthernetPHYRead 
+*          0    0000d51e    00000022     
+                  0000d51e    00000022     driverlib-cm3.lib : ethernet.o (i.EthernetPHYRead)
+
+i.GPIOPinTypeEthernetLED 
+*          0    0000d540    0000001c     
+                  0000d540    0000001c     driverlib-cm3.lib : gpio.o (i.GPIOPinTypeEthernetLED)
+
+i.GPIOPinTypeGPIOInput 
+*          0    0000d55c    0000001c     
+                  0000d55c    0000001c     driverlib-cm3.lib : gpio.o (i.GPIOPinTypeGPIOInput)
+
+i.GPIOPinTypeGPIOOutput 
+*          0    0000d578    0000001c     
+                  0000d578    0000001c     driverlib-cm3.lib : gpio.o (i.GPIOPinTypeGPIOOutput)
+
+i.GPIOPinTypeSSI 
+*          0    0000d594    0000001c     
+                  0000d594    0000001c     driverlib-cm3.lib : gpio.o (i.GPIOPinTypeSSI)
+
+i.GPIOPinTypeUART 
+*          0    0000d5b0    0000001c     
+                  0000d5b0    0000001c     driverlib-cm3.lib : gpio.o (i.GPIOPinTypeUART)
+
+i.IntPriorityGroupingSet 
+*          0    0000d5cc    0000001c     
+                  0000d5cc    0000001c     driverlib-cm3.lib : interrupt.o (i.IntPriorityGroupingSet)
+
+i.SSIDataGetNonBlocking 
+*          0    0000d5e8    00000014     
+                  0000d5e8    00000014     driverlib-cm3.lib : ssi.o (i.SSIDataGetNonBlocking)
+
+i.UARTEnable 
+*          0    0000d5fc    00000014     
+                  0000d5fc    00000014     driverlib-cm3.lib : uart.o (i.UARTEnable)
 
 i.EthernetIntStatus 
-*          0    0000c224    0000000e     
-                  0000c224    0000000e     driverlib-cm3.lib : ethernet.o (i.EthernetIntStatus)
+*          0    0000d610    0000000e     
+                  0000d610    0000000e     driverlib-cm3.lib : ethernet.o (i.EthernetIntStatus)
 
 i.SysTickEnable 
-*          0    0000c232    0000000e     
-                  0000c232    0000000e     driverlib-cm3.lib : systick.o (i.SysTickEnable)
+*          0    0000d61e    0000000e     
+                  0000d61e    0000000e     driverlib-cm3.lib : systick.o (i.SysTickEnable)
 
 i.SysTickIntEnable 
-*          0    0000c240    0000000e     
-                  0000c240    0000000e     driverlib-cm3.lib : systick.o (i.SysTickIntEnable)
+*          0    0000d62c    0000000e     
+                  0000d62c    0000000e     driverlib-cm3.lib : systick.o (i.SysTickIntEnable)
 
 i.SSIDataPut 
-*          0    0000c24e    0000000c     
-                  0000c24e    0000000c     driverlib-cm3.lib : ssi.o (i.SSIDataPut)
+*          0    0000d63a    0000000c     
+                  0000d63a    0000000c     driverlib-cm3.lib : ssi.o (i.SSIDataPut)
 
 i.UARTCharGet 
-*          0    0000c25a    0000000c     
-                  0000c25a    0000000c     driverlib-cm3.lib : uart.o (i.UARTCharGet)
+*          0    0000d646    0000000c     
+                  0000d646    0000000c     driverlib-cm3.lib : uart.o (i.UARTCharGet)
 
 i.UARTCharPut 
-*          0    0000c266    0000000c     
-                  0000c266    0000000c     driverlib-cm3.lib : uart.o (i.UARTCharPut)
+*          0    0000d652    0000000c     
+                  0000d652    0000000c     driverlib-cm3.lib : uart.o (i.UARTCharPut)
 
 i.EthernetIntDisable 
-*          0    0000c272    0000000a     
-                  0000c272    0000000a     driverlib-cm3.lib : ethernet.o (i.EthernetIntDisable)
+*          0    0000d65e    0000000a     
+                  0000d65e    0000000a     driverlib-cm3.lib : ethernet.o (i.EthernetIntDisable)
 
 i.IntMasterDisable 
-*          0    0000c27c    0000000a     
-                  0000c27c    0000000a     driverlib-cm3.lib : interrupt.o (i.IntMasterDisable)
+*          0    0000d668    0000000a     
+                  0000d668    0000000a     driverlib-cm3.lib : interrupt.o (i.IntMasterDisable)
 
 i.IntMasterEnable 
-*          0    0000c286    0000000a     
-                  0000c286    0000000a     driverlib-cm3.lib : interrupt.o (i.IntMasterEnable)
+*          0    0000d672    0000000a     
+                  0000d672    0000000a     driverlib-cm3.lib : interrupt.o (i.IntMasterEnable)
 
 i.SSIDisable 
-*          0    0000c290    0000000a     
-                  0000c290    0000000a     driverlib-cm3.lib : ssi.o (i.SSIDisable)
+*          0    0000d67c    0000000a     
+                  0000d67c    0000000a     driverlib-cm3.lib : ssi.o (i.SSIDisable)
 
 i.SSIEnable 
-*          0    0000c29a    0000000a     
-                  0000c29a    0000000a     driverlib-cm3.lib : ssi.o (i.SSIEnable)
+*          0    0000d686    0000000a     
+                  0000d686    0000000a     driverlib-cm3.lib : ssi.o (i.SSIEnable)
 
 i.SysTickPeriodSet 
-*          0    0000c2a4    0000000a     
-                  0000c2a4    0000000a     driverlib-cm3.lib : systick.o (i.SysTickPeriodSet)
+*          0    0000d690    0000000a     
+                  0000d690    0000000a     driverlib-cm3.lib : systick.o (i.SysTickPeriodSet)
 
 i.EthernetIntEnable 
-*          0    0000c2ae    00000008     
-                  0000c2ae    00000008     driverlib-cm3.lib : ethernet.o (i.EthernetIntEnable)
+*          0    0000d69a    00000008     
+                  0000d69a    00000008     driverlib-cm3.lib : ethernet.o (i.EthernetIntEnable)
 
 i.SSIBusy 
-*          0    0000c2b6    00000008     
-                  0000c2b6    00000008     driverlib-cm3.lib : ssi.o (i.SSIBusy)
+*          0    0000d6a2    00000008     
+                  0000d6a2    00000008     driverlib-cm3.lib : ssi.o (i.SSIBusy)
 
 i.GPIOPinRead 
-*          0    0000c2be    00000006     
-                  0000c2be    00000006     driverlib-cm3.lib : gpio.o (i.GPIOPinRead)
+*          0    0000d6aa    00000006     
+                  0000d6aa    00000006     driverlib-cm3.lib : gpio.o (i.GPIOPinRead)
 
 i.GPIOPinWrite 
-*          0    0000c2c4    00000006     
-                  0000c2c4    00000006     driverlib-cm3.lib : gpio.o (i.GPIOPinWrite)
+*          0    0000d6b0    00000006     
+                  0000d6b0    00000006     driverlib-cm3.lib : gpio.o (i.GPIOPinWrite)
 
 i.EthernetIntClear 
-*          0    0000c2ca    00000004     
-                  0000c2ca    00000004     driverlib-cm3.lib : ethernet.o (i.EthernetIntClear)
+*          0    0000d6b6    00000004     
+                  0000d6b6    00000004     driverlib-cm3.lib : ethernet.o (i.EthernetIntClear)
 
-.cinit     0    0000c2d0    000001b8     
-                  0000c2d0    00000176     (.cinit..data.load) [load image, compression = rle]
-                  0000c446    00000002     --HOLE-- [fill = 0]
-                  0000c448    0000000c     (__TI_handler_table)
-                  0000c454    00000004     --HOLE-- [fill = 0]
-                  0000c458    0000000b     (.cinit.vtable.load) [load image, compression = rle]
-                  0000c463    00000005     --HOLE-- [fill = 0]
-                  0000c468    00000008     (.cinit..bss.load) [load image, compression = zero_init]
-                  0000c470    00000018     (__TI_cinit_table)
+.cinit     0    0000d6c0    000001c0     
+                  0000d6c0    0000017e     (.cinit..data.load) [load image, compression = rle]
+                  0000d83e    00000002     --HOLE-- [fill = 0]
+                  0000d840    0000000c     (__TI_handler_table)
+                  0000d84c    00000004     --HOLE-- [fill = 0]
+                  0000d850    0000000b     (.cinit.vtable.load) [load image, compression = rle]
+                  0000d85b    00000005     --HOLE-- [fill = 0]
+                  0000d860    00000008     (.cinit..bss.load) [load image, compression = zero_init]
+                  0000d868    00000018     (__TI_cinit_table)
 
-.bss       0    20000000    00008540     UNINITIALIZED
+.bss       0    20000000    00008948     UNINITIALIZED
                   20000000    00005814     lwiplib.obj (.bss:ram_heap)
                   20005814    00002964     lwiplib.obj (.bss:memp_memory)
-                  20008178    000000ea     lwiplib.obj (.bss:lwip_stats)
-                  20008262    00000002     --HOLE--
-                  20008264    000000c8     lwiplib.obj (.bss:arp_table)
-                  2000832c    000000b8     lwiplib.obj (.bss)
-                  200083e4    00000060     lwiplib.obj (.bss:stellarisif_data)
-                  20008444    00000054     locator.obj (.bss:g_pucLocatorData)
-                  20008498    00000038     lwiplib.obj (.bss:g_sNetIF)
-                  200084d0    00000034     display.obj (.bss)
-                  20008504    00000029     buttons.obj (.bss)
-                  2000852d    00000003     --HOLE--
-                  20008530    0000000c     rit128x96x4.obj (.bss)
-                  2000853c    00000004     two_fac_auth.obj (.bss)
+                  20008178    00000400     tcp.obj (.bss:g_tcpMsg)
+                  20008578    000000ea     lwiplib.obj (.bss:lwip_stats)
+                  20008662    00000002     tcp.obj (.bss)
+                  20008664    000000c8     lwiplib.obj (.bss:arp_table)
+                  2000872c    000000b8     lwiplib.obj (.bss)
+                  200087e4    00000060     lwiplib.obj (.bss:stellarisif_data)
+                  20008844    00000054     locator.obj (.bss:g_pucLocatorData)
+                  20008898    0000003c     display.obj (.bss)
+                  200088d4    00000038     lwiplib.obj (.bss:g_sNetIF)
+                  2000890c    00000029     buttons.obj (.bss)
+                  20008935    00000003     --HOLE--
+                  20008938    0000000c     rit128x96x4.obj (.bss)
+                  20008944    00000004     two_fac_auth.obj (.bss)
 
-.stack     0    20008540    00000400     UNINITIALIZED
-                  20008540    00000400     --HOLE--
+.stack     0    20008948    00000400     UNINITIALIZED
+                  20008948    00000400     --HOLE--
 
-.data      0    20008940    0000021d     
-                  20008940    00000096     display.obj (.data:g_aucDispStatus)
-                  200089d6    00000001     driverlib-cm3.lib : sysctl.o (.data)
-                  200089d7    00000001     --HOLE--
-                  200089d8    0000007a     display.obj (.data)
-                  20008a52    00000002     --HOLE--
-                  20008a54    00000078     display.obj (.data:g_aucDispSysStatus)
-                  20008acc    00000032     lwiplib.obj (.data)
-                  20008afe    00000002     --HOLE--
-                  20008b00    0000002c     lwiplib.obj (.data:tcp_state_str)
-                  20008b2c    00000008     rtsv7M3_T_le_eabi.lib : _lock.obj (.data)
-                  20008b34    00000008                           : exit.obj (.data)
-                  20008b3c    00000008     two_fac_auth.obj (.data)
-                  20008b44    00000005     uartstdio.obj (.data)
-                  20008b49    00000003     --HOLE--
-                  20008b4c    00000004     driverlib-cm3.lib : sysctl.o (.data)
-                  20008b50    00000004                       : sysctl.o (.data)
-                  20008b54    00000004                       : sysctl.o (.data)
-                  20008b58    00000004     rtsv7M3_T_le_eabi.lib : stkdepth_vars.obj (.data)
-                  20008b5c    00000001     buttons.obj (.data)
+.data      0    20008d48    00000261     
+                  20008d48    000000d2     display.obj (.data:g_aucDispStatus)
+                  20008e1a    00000001     driverlib-cm3.lib : sysctl.o (.data)
+                  20008e1b    00000001     --HOLE--
+                  20008e1c    00000078     display.obj (.data:g_aucDispSysStatus)
+                  20008e94    00000058     display.obj (.data)
+                  20008eec    00000032     lwiplib.obj (.data)
+                  20008f1e    00000002     --HOLE--
+                  20008f20    0000002c     lwiplib.obj (.data:tcp_state_str)
+                  20008f4c    00000028     display.obj (.data:g_aucDispTitle)
+                  20008f74    00000008     rtsv7M3_T_le_eabi.lib : _lock.obj (.data)
+                  20008f7c    00000008                           : exit.obj (.data)
+                  20008f84    00000008     two_fac_auth.obj (.data)
+                  20008f8c    00000005     uartstdio.obj (.data)
+                  20008f91    00000003     --HOLE--
+                  20008f94    00000004     driverlib-cm3.lib : sysctl.o (.data)
+                  20008f98    00000004                       : sysctl.o (.data)
+                  20008f9c    00000004                       : sysctl.o (.data)
+                  20008fa0    00000004     rtsv7M3_T_le_eabi.lib : stkdepth_vars.obj (.data)
+                  20008fa4    00000004     ustdlib.obj (.data)
+                  20008fa8    00000001     buttons.obj (.data)
 
 
 LINKER GENERATED COPY TABLES
 
-__TI_cinit_table @ 0000c470 records: 3, size/record: 8, table size: 24
-	.data: load addr=0000c2d0, load size=00000176 bytes, run addr=20008940, run size=0000021d bytes, compression=rle
-	vtable: load addr=0000c458, load size=0000000b bytes, run addr=0000b800, run size=0000026c bytes, compression=rle
-	.bss: load addr=0000c468, load size=00000008 bytes, run addr=20000000, run size=00008540 bytes, compression=zero_init
+__TI_cinit_table @ 0000d868 records: 3, size/record: 8, table size: 24
+	.data: load addr=0000d6c0, load size=0000017e bytes, run addr=20008d48, run size=00000261 bytes, compression=rle
+	vtable: load addr=0000d850, load size=0000000b bytes, run addr=0000cc00, run size=0000026c bytes, compression=rle
+	.bss: load addr=0000d860, load size=00000008 bytes, run addr=20000000, run size=00008948 bytes, compression=zero_init
 
 
 LINKER GENERATED HANDLER TABLE
 
-__TI_handler_table @ 0000c448 records: 3, size/record: 4, table size: 12
+__TI_handler_table @ 0000d840 records: 3, size/record: 4, table size: 12
 	index: 0, handler: __TI_decompress_rle24
 	index: 1, handler: __TI_decompress_none
 	index: 2, handler: __TI_zero_init
@@ -471,138 +481,138 @@ callee name               trampoline name
    callee addr  tramp addr   call addr  call info
 --------------  -----------  ---------  ----------------
 GPIOPinTypeGPIOInput      $Tramp$TT$S$$GPIOPinTypeGPIOInput
-   0000c161     0000af08     0000aa9c   buttons.obj (.text)
-                             0000aab0   buttons.obj (.text)
-                             0000aac4   buttons.obj (.text)
-                             0000aad8   buttons.obj (.text)
-                             0000aaf2   buttons.obj (.text)
-IntPrioritySet            $Tramp$TT$S$$IntPrioritySet
-   0000c0d9     0000af14     0000a746   two_fac_auth.obj (.text)
-                             0000a74e   two_fac_auth.obj (.text)
-IntPriorityGroupingSet    $Tramp$TT$S$$IntPriorityGroupingSet
-   0000c1d1     0000af20     0000a73e   two_fac_auth.obj (.text)
-FlashUserGet              $Tramp$TT$S$$FlashUserGet
-   0000bfb9     0000af2c     0000a698   two_fac_auth.obj (.text)
-GPIOPinTypeEthernetLED    $Tramp$TT$S$$GPIOPinTypeEthernetLED
-   0000c145     0000af38     0000a688   two_fac_auth.obj (.text)
-SysCtlPeripheralReset     $Tramp$TT$S$$SysCtlPeripheralReset
-   0000bdad     0000af44     0000a67a   two_fac_auth.obj (.text)
-SysTickIntEnable          $Tramp$TT$S$$SysTickIntEnable
-   0000c241     0000af50     0000a666   two_fac_auth.obj (.text)
-SysTickEnable             $Tramp$TT$S$$SysTickEnable
-   0000c233     0000af5c     0000a662   two_fac_auth.obj (.text)
-SysTickPeriodSet          $Tramp$TT$S$$SysTickPeriodSet
-   0000c2a5     0000af68     0000a65e   two_fac_auth.obj (.text)
-GPIOPinTypeUART           $Tramp$TT$S$$GPIOPinTypeUART
-   0000c1b5     0000af74     0000a646   two_fac_auth.obj (.text)
-SysCtlClockSet            $Tramp$TT$S$$SysCtlClockSet
-   0000bc55     0000af80     0000a632   two_fac_auth.obj (.text)
-GPIOPinRead               $Tramp$TT$S$$GPIOPinRead
-   0000c2bf     0000af8c     0000a4d0   two_fac_auth.obj (.text)
-                             0000a4da   two_fac_auth.obj (.text)
+   0000d55d     0000c238     0000bdcc   buttons.obj (.text)
+                             0000bde0   buttons.obj (.text)
+                             0000bdf4   buttons.obj (.text)
+                             0000be08   buttons.obj (.text)
+                             0000be22   buttons.obj (.text)
 UARTCharGet               $Tramp$TT$S$$UARTCharGet
-   0000c25b     0000af98     0000a114   uartstdio.obj (.text)
-                             0000a1ba   uartstdio.obj (.text)
+   0000d647     0000c244     0000b410   uartstdio.obj (.text)
+                             0000b4b6   uartstdio.obj (.text)
 UARTCharPut               $Tramp$TT$S$$UARTCharPut
-   0000c267     0000afa4     0000a0d8   uartstdio.obj (.text)
-                             0000a0e6   uartstdio.obj (.text)
-                             0000a198   uartstdio.obj (.text)
+   0000d653     0000c250     0000b3d4   uartstdio.obj (.text)
+                             0000b3e2   uartstdio.obj (.text)
+                             0000b494   uartstdio.obj (.text)
 UARTEnable                $Tramp$TT$S$$UARTEnable
-   0000c201     0000afb0     0000a084   uartstdio.obj (.text)
+   0000d5fd     0000c25c     0000b380   uartstdio.obj (.text)
 UARTConfigSetExpClk       $Tramp$TT$S$$UARTConfigSetExpClk
-   0000be95     0000afbc     0000a07c   uartstdio.obj (.text)
+   0000d295     0000c268     0000b378   uartstdio.obj (.text)
 SysCtlPeripheralPresent   $Tramp$TT$S$$SysCtlPeripheralPresent
-   0000be25     0000afc8     0000a054   uartstdio.obj (.text)
+   0000d225     0000c274     0000b350   uartstdio.obj (.text)
 GPIOPinTypeGPIOOutput     $Tramp$TT$S$$GPIOPinTypeGPIOOutput
-   0000c17d     0000afd4     00009f0a   rit128x96x4.obj (.text)
-                             00009f70   rit128x96x4.obj (.text)
+   0000d579     0000c280     0000b206   rit128x96x4.obj (.text)
+                             0000b26c   rit128x96x4.obj (.text)
 SSIDataGetNonBlocking     $Tramp$TT$S$$SSIDataGetNonBlocking
-   0000c1ed     0000afe0     00009ef6   rit128x96x4.obj (.text)
+   0000d5e9     0000c28c     0000b1f2   rit128x96x4.obj (.text)
 SSIEnable                 $Tramp$TT$S$$SSIEnable
-   0000c29b     0000afec     00009eb0   rit128x96x4.obj (.text)
+   0000d687     0000c298     0000b1ac   rit128x96x4.obj (.text)
 GPIOPadConfigSet          $Tramp$TT$S$$GPIOPadConfigSet
-   0000b705     0000aff8     00009eaa   rit128x96x4.obj (.text)
-                             00009f18   rit128x96x4.obj (.text)
-                             00009f66   rit128x96x4.obj (.text)
-                             00009f7e   rit128x96x4.obj (.text)
-                             0000aaa8   buttons.obj (.text)
-                             0000aabc   buttons.obj (.text)
-                             0000aad0   buttons.obj (.text)
-                             0000aae4   buttons.obj (.text)
-                             0000aafe   buttons.obj (.text)
+   0000caf1     0000c2a4     0000b1a6   rit128x96x4.obj (.text)
+                             0000b214   rit128x96x4.obj (.text)
+                             0000b262   rit128x96x4.obj (.text)
+                             0000b27a   rit128x96x4.obj (.text)
+                             0000bdd8   buttons.obj (.text)
+                             0000bdec   buttons.obj (.text)
+                             0000be00   buttons.obj (.text)
+                             0000be14   buttons.obj (.text)
+                             0000be2e   buttons.obj (.text)
 GPIOPinTypeSSI            $Tramp$TT$S$$GPIOPinTypeSSI
-   0000c199     0000b004     00009e9c   rit128x96x4.obj (.text)
-                             00009f58   rit128x96x4.obj (.text)
+   0000d595     0000c2b0     0000b198   rit128x96x4.obj (.text)
+                             0000b254   rit128x96x4.obj (.text)
 SSIConfigSetExpClk        $Tramp$TT$S$$SSIConfigSetExpClk
-   0000b7b5     0000b010     00009e92   rit128x96x4.obj (.text)
+   0000d369     0000c2bc     0000b18e   rit128x96x4.obj (.text)
 SSIDisable                $Tramp$TT$S$$SSIDisable
-   0000c291     0000b01c     00009e7a   rit128x96x4.obj (.text)
-                             00009f00   rit128x96x4.obj (.text)
+   0000d67d     0000c2c8     0000b176   rit128x96x4.obj (.text)
+                             0000b1fc   rit128x96x4.obj (.text)
 SSIDataPut                $Tramp$TT$S$$SSIDataPut
-   0000c24f     0000b028     00009ba8   rit128x96x4.obj (.text)
-                             00009c2e   rit128x96x4.obj (.text)
+   0000d63b     0000c2d4     0000aea4   rit128x96x4.obj (.text)
+                             0000af2a   rit128x96x4.obj (.text)
 GPIOPinWrite              $Tramp$TT$S$$GPIOPinWrite
-   0000c2c5     0000b034     00009b7e   rit128x96x4.obj (.text)
-                             00009c04   rit128x96x4.obj (.text)
-                             00009f24   rit128x96x4.obj (.text)
-                             00009f8a   rit128x96x4.obj (.text)
+   0000d6b1     0000c2e0     0000ae7a   rit128x96x4.obj (.text)
+                             0000af00   rit128x96x4.obj (.text)
+                             0000b220   rit128x96x4.obj (.text)
+                             0000b286   rit128x96x4.obj (.text)
 SSIBusy                   $Tramp$TT$S$$SSIBusy
-   0000c2b7     0000b040     00009b6e   rit128x96x4.obj (.text)
-                             00009bf4   rit128x96x4.obj (.text)
-                             00009eea   rit128x96x4.obj (.text)
+   0000d6a3     0000c2ec     0000ae6a   rit128x96x4.obj (.text)
+                             0000aef0   rit128x96x4.obj (.text)
+                             0000b1e6   rit128x96x4.obj (.text)
+IntPrioritySet            $Tramp$TT$S$$IntPrioritySet
+   0000d4d5     0000c2f8     0000ab9a   two_fac_auth.obj (.text)
+                             0000aba2   two_fac_auth.obj (.text)
+IntPriorityGroupingSet    $Tramp$TT$S$$IntPriorityGroupingSet
+   0000d5cd     0000c304     0000ab92   two_fac_auth.obj (.text)
+FlashUserGet              $Tramp$TT$S$$FlashUserGet
+   0000d3b5     0000c310     0000aae8   two_fac_auth.obj (.text)
+GPIOPinTypeEthernetLED    $Tramp$TT$S$$GPIOPinTypeEthernetLED
+   0000d541     0000c31c     0000aad8   two_fac_auth.obj (.text)
+SysCtlPeripheralReset     $Tramp$TT$S$$SysCtlPeripheralReset
+   0000d1ad     0000c328     0000aaca   two_fac_auth.obj (.text)
+SysTickIntEnable          $Tramp$TT$S$$SysTickIntEnable
+   0000d62d     0000c334     0000aab6   two_fac_auth.obj (.text)
+SysTickEnable             $Tramp$TT$S$$SysTickEnable
+   0000d61f     0000c340     0000aab2   two_fac_auth.obj (.text)
+SysTickPeriodSet          $Tramp$TT$S$$SysTickPeriodSet
+   0000d691     0000c34c     0000aaae   two_fac_auth.obj (.text)
+GPIOPinTypeUART           $Tramp$TT$S$$GPIOPinTypeUART
+   0000d5b1     0000c358     0000aa96   two_fac_auth.obj (.text)
+SysCtlClockSet            $Tramp$TT$S$$SysCtlClockSet
+   0000d055     0000c364     0000aa82   two_fac_auth.obj (.text)
+GPIOPinRead               $Tramp$TT$S$$GPIOPinRead
+   0000d6ab     0000c370     0000a918   two_fac_auth.obj (.text)
+                             0000a922   two_fac_auth.obj (.text)
 EthernetMACAddrSet        $Tramp$TT$S$$EthernetMACAddrSet
-   0000bff1     0000b04c     0000933c   lwiplib.obj (.text)
+   0000d3ed     0000c37c     0000933c   lwiplib.obj (.text)
 SysCtlPeripheralEnable    $Tramp$TT$S$$SysCtlPeripheralEnable
-   0000bf69     0000b058     00009334   lwiplib.obj (.text)
-                             00009f42   rit128x96x4.obj (.text)
-                             00009f48   rit128x96x4.obj (.text)
-                             00009f4e   rit128x96x4.obj (.text)
-                             0000a06e   uartstdio.obj (.text)
-                             0000a63c   two_fac_auth.obj (.text)
-                             0000a674   two_fac_auth.obj (.text)
-                             0000a680   two_fac_auth.obj (.text)
-                             0000aa94   buttons.obj (.text)
-                             0000aaea   buttons.obj (.text)
+   0000cba1     0000c388     00009334   lwiplib.obj (.text)
+                             0000aa8c   two_fac_auth.obj (.text)
+                             0000aac4   two_fac_auth.obj (.text)
+                             0000aad0   two_fac_auth.obj (.text)
+                             0000b23e   rit128x96x4.obj (.text)
+                             0000b244   rit128x96x4.obj (.text)
+                             0000b24a   rit128x96x4.obj (.text)
+                             0000b36a   uartstdio.obj (.text)
+                             0000bdc4   buttons.obj (.text)
+                             0000be1a   buttons.obj (.text)
 EthernetPHYRead           $Tramp$TT$S$$EthernetPHYRead
-   0000c123     0000b064     0000912e   lwiplib.obj (.text)
+   0000d51f     0000c394     0000912e   lwiplib.obj (.text)
 EthernetIntEnable         $Tramp$TT$S$$EthernetIntEnable
-   0000c2af     0000b070     00008dd4   lwiplib.obj (.text)
+   0000d69b     0000c3a0     00008dd4   lwiplib.obj (.text)
 IntEnable                 $Tramp$TT$S$$IntEnable
-   0000bf05     0000b07c     00008dcc   lwiplib.obj (.text)
+   0000d305     0000c3ac     00008dcc   lwiplib.obj (.text)
 EthernetEnable            $Tramp$TT$S$$EthernetEnable
-   0000c101     0000b088     00008dc6   lwiplib.obj (.text)
+   0000d4fd     0000c3b8     00008dc6   lwiplib.obj (.text)
 EthernetConfigSet         $Tramp$TT$S$$EthernetConfigSet
-   0000c087     0000b094     00008dc0   lwiplib.obj (.text)
+   0000d483     0000c3c4     00008dc0   lwiplib.obj (.text)
 EthernetInitExpClk        $Tramp$TT$S$$EthernetInitExpClk
-   0000c215     0000b0a0     00008db6   lwiplib.obj (.text)
+   0000cbf1     0000c3d0     00008db6   lwiplib.obj (.text)
 SysCtlClockGet            $Tramp$TT$S$$SysCtlClockGet
-   0000ba6d     0000b0ac     00008dae   lwiplib.obj (.text)
-                             00009e7e   rit128x96x4.obj (.text)
-                             0000a08e   uartstdio.obj (.text)
-                             0000a0a6   uartstdio.obj (.text)
-                             0000a654   two_fac_auth.obj (.text)
+   0000ce6d     0000c3dc     00008dae   lwiplib.obj (.text)
+                             0000aaa4   two_fac_auth.obj (.text)
+                             0000b17a   rit128x96x4.obj (.text)
+                             0000b38a   uartstdio.obj (.text)
+                             0000b3a2   uartstdio.obj (.text)
 EthernetIntClear          $Tramp$TT$S$$EthernetIntClear
-   0000c2cb     0000b0b8     00008daa   lwiplib.obj (.text)
+   0000d6b7     0000c3e8     00008daa   lwiplib.obj (.text)
                              000093a4   lwiplib.obj (.text)
 EthernetIntStatus         $Tramp$TT$S$$EthernetIntStatus
-   0000c225     0000b0c4     00008da0   lwiplib.obj (.text)
+   0000d611     0000c3f4     00008da0   lwiplib.obj (.text)
                              0000939a   lwiplib.obj (.text)
 EthernetIntDisable        $Tramp$TT$S$$EthernetIntDisable
-   0000c273     0000b0d0     00008d98   lwiplib.obj (.text)
+   0000d65f     0000c400     00008d98   lwiplib.obj (.text)
 EthernetMACAddrGet        $Tramp$TT$S$$EthernetMACAddrGet
-   0000c027     0000b0dc     00008d80   lwiplib.obj (.text)
+   0000d423     0000c40c     00008d80   lwiplib.obj (.text)
                              000093d8   lwiplib.obj (.text)
 IntMasterEnable           $Tramp$TT$S$$IntMasterEnable
-   0000c287     0000b0e8     00008c9e   lwiplib.obj (.text)
-                             0000a66a   two_fac_auth.obj (.text)
-                             0000ab38   buttons.obj (.text)
+   0000d673     0000c418     00008c9e   lwiplib.obj (.text)
+                             0000aaba   two_fac_auth.obj (.text)
+                             0000be68   buttons.obj (.text)
 IntMasterDisable          $Tramp$TT$S$$IntMasterDisable
-   0000c27d     0000b0f4     00008c8a   lwiplib.obj (.text)
-                             0000ab26   buttons.obj (.text)
+   0000d669     0000c424     00008c8a   lwiplib.obj (.text)
+                             0000be56   buttons.obj (.text)
 SysCtlDelay               $Tramp$TT$S$$SysCtlDelay
-   0000c081     0000bda0     0000bccc   driverlib-cm3.lib : sysctl.o (i.SysCtlClockSet)
-                             0000bcf8                     : sysctl.o (i.SysCtlClockSet)
-                             0000bd86                     : sysctl.o (i.SysCtlClockSet)
+   0000d47d     0000d1a0     0000d0cc   driverlib-cm3.lib : sysctl.o (i.SysCtlClockSet)
+                             0000d0f8                     : sysctl.o (i.SysCtlClockSet)
+                             0000d186                     : sysctl.o (i.SysCtlClockSet)
 
 [43 trampolines]
 [90 trampoline calls]
@@ -612,133 +622,133 @@ GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name
 
 address    name
 --------   ----
-0000ae09   C$$EXIT
-0000c079   CPUbasepriGet
-0000c073   CPUbasepriSet
-0000c059   CPUcpsid
-0000c067   CPUcpsie
-0000c061   CPUprimask
-0000c06f   CPUwfi
-0000c087   EthernetConfigSet
-0000c101   EthernetEnable
-0000c215   EthernetInitExpClk
-0000c2cb   EthernetIntClear
-0000c273   EthernetIntDisable
-0000c2af   EthernetIntEnable
-0000c225   EthernetIntStatus
-0000c027   EthernetMACAddrGet
-0000bff1   EthernetMACAddrSet
-0000c123   EthernetPHYRead
-0000bfb9   FlashUserGet
-0000c0b1   GPIODirModeSet
-0000b705   GPIOPadConfigSet
-0000c2bf   GPIOPinRead
-0000c145   GPIOPinTypeEthernetLED
-0000c161   GPIOPinTypeGPIOInput
-0000c17d   GPIOPinTypeGPIOOutput
-0000c199   GPIOPinTypeSSI
-0000c1b5   GPIOPinTypeUART
-0000c2c5   GPIOPinWrite
-0000bf05   IntEnable
-0000c27d   IntMasterDisable
-0000c287   IntMasterEnable
-0000c1d1   IntPriorityGroupingSet
-0000c0d9   IntPrioritySet
-0000a9e7   LocatorAppTitleSet
-0000a941   LocatorBoardIDSet
-0000a931   LocatorBoardTypeSet
-0000a951   LocatorClientIPSet
-0000a8bf   LocatorInit
-0000a97f   LocatorMACAddrSet
-0000a9b9   LocatorVersionSet
-00009c41   RIT128x96x4Clear
-00009ecf   RIT128x96x4Disable
-0000a017   RIT128x96x4DisplayOff
-00009fe3   RIT128x96x4DisplayOn
-00009e75   RIT128x96x4Enable
-00009dd9   RIT128x96x4ImageDraw
-00009f3d   RIT128x96x4Init
-00009ca9   RIT128x96x4StringDraw
-0000aef5   ResetISR
+0000c139   C$$EXIT
+0000d475   CPUbasepriGet
+0000d46f   CPUbasepriSet
+0000d455   CPUcpsid
+0000d463   CPUcpsie
+0000d45d   CPUprimask
+0000d46b   CPUwfi
+0000d483   EthernetConfigSet
+0000d4fd   EthernetEnable
+0000cbf1   EthernetInitExpClk
+0000d6b7   EthernetIntClear
+0000d65f   EthernetIntDisable
+0000d69b   EthernetIntEnable
+0000d611   EthernetIntStatus
+0000d423   EthernetMACAddrGet
+0000d3ed   EthernetMACAddrSet
+0000d51f   EthernetPHYRead
+0000d3b5   FlashUserGet
+0000d4ad   GPIODirModeSet
+0000caf1   GPIOPadConfigSet
+0000d6ab   GPIOPinRead
+0000d541   GPIOPinTypeEthernetLED
+0000d55d   GPIOPinTypeGPIOInput
+0000d579   GPIOPinTypeGPIOOutput
+0000d595   GPIOPinTypeSSI
+0000d5b1   GPIOPinTypeUART
+0000d6b1   GPIOPinWrite
+0000d305   IntEnable
+0000d669   IntMasterDisable
+0000d673   IntMasterEnable
+0000d5cd   IntPriorityGroupingSet
+0000d4d5   IntPrioritySet
+0000bd17   LocatorAppTitleSet
+0000bc71   LocatorBoardIDSet
+0000bc61   LocatorBoardTypeSet
+0000bc81   LocatorClientIPSet
+0000bbef   LocatorInit
+0000bcaf   LocatorMACAddrSet
+0000bce9   LocatorVersionSet
+0000af3d   RIT128x96x4Clear
+0000b1cb   RIT128x96x4Disable
+0000b313   RIT128x96x4DisplayOff
+0000b2df   RIT128x96x4DisplayOn
+0000b171   RIT128x96x4Enable
+0000b0d5   RIT128x96x4ImageDraw
+0000b239   RIT128x96x4Init
+0000afa5   RIT128x96x4StringDraw
+0000c225   ResetISR
 UNDEFED    SHT$$INIT_ARRAY$$Base
 UNDEFED    SHT$$INIT_ARRAY$$Limit
-0000c2b7   SSIBusy
-0000b7b5   SSIConfigSetExpClk
-0000c1ed   SSIDataGetNonBlocking
-0000c24f   SSIDataPut
-0000c291   SSIDisable
-0000c29b   SSIEnable
-0000ba6d   SysCtlClockGet
-0000bc55   SysCtlClockSet
-0000c081   SysCtlDelay
-0000bf69   SysCtlPeripheralEnable
-0000be25   SysCtlPeripheralPresent
-0000bdad   SysCtlPeripheralReset
-0000c233   SysTickEnable
-0000c241   SysTickIntEnable
-0000a4c5   SysTickIntHandler
-0000c2a5   SysTickPeriodSet
-0000c25b   UARTCharGet
-0000c267   UARTCharPut
-0000be95   UARTConfigSetExpClk
-0000c201   UARTEnable
-0000a045   UARTStdioConfig
-0000a08b   UARTStdioInit
-0000a0a1   UARTStdioInitExpClk
-0000a1b5   UARTgetc
-0000a0fd   UARTgets
-0000a1dd   UARTprintf
-0000a0b7   UARTwrite
-20008940   __STACK_END
+0000d6a3   SSIBusy
+0000d369   SSIConfigSetExpClk
+0000d5e9   SSIDataGetNonBlocking
+0000d63b   SSIDataPut
+0000d67d   SSIDisable
+0000d687   SSIEnable
+0000ce6d   SysCtlClockGet
+0000d055   SysCtlClockSet
+0000d47d   SysCtlDelay
+0000cba1   SysCtlPeripheralEnable
+0000d225   SysCtlPeripheralPresent
+0000d1ad   SysCtlPeripheralReset
+0000d61f   SysTickEnable
+0000d62d   SysTickIntEnable
+0000a90d   SysTickIntHandler
+0000d691   SysTickPeriodSet
+0000d647   UARTCharGet
+0000d653   UARTCharPut
+0000d295   UARTConfigSetExpClk
+0000d5fd   UARTEnable
+0000b341   UARTStdioConfig
+0000b387   UARTStdioInit
+0000b39d   UARTStdioInitExpClk
+0000b4b1   UARTgetc
+0000b3f9   UARTgets
+0000b4d9   UARTprintf
+0000b3b3   UARTwrite
+20008d48   __STACK_END
 00000400   __STACK_SIZE
-20008940   __STACK_TOP
-0000c470   __TI_CINIT_Base
-0000c488   __TI_CINIT_Limit
-0000c448   __TI_Handler_Table_Base
-0000c454   __TI_Handler_Table_Limit
+20008d48   __STACK_TOP
+0000d868   __TI_CINIT_Base
+0000d880   __TI_CINIT_Limit
+0000d840   __TI_Handler_Table_Base
+0000d84c   __TI_Handler_Table_Limit
 00000001   __TI_args_main
-0000ac55   __TI_auto_init
-0000aee7   __TI_decompress_none
-0000af01   __TI_decompress_rle24
+0000bf85   __TI_auto_init
+0000c217   __TI_decompress_none
+0000c231   __TI_decompress_rle24
 00000000   __TI_static_base__
-0000aed5   __TI_zero_init
-0000ace9   __aeabi_memclr
-0000ace9   __aeabi_memclr4
-0000ace9   __aeabi_memclr8
-0000abb9   __aeabi_memcpy
-0000abb9   __aeabi_memcpy4
-0000abb9   __aeabi_memcpy8
-0000aceb   __aeabi_memset
-0000aceb   __aeabi_memset4
-0000aceb   __aeabi_memset8
+0000c205   __TI_zero_init
+0000c019   __aeabi_memclr
+0000c019   __aeabi_memclr4
+0000c019   __aeabi_memclr8
+0000bee9   __aeabi_memcpy
+0000bee9   __aeabi_memcpy4
+0000bee9   __aeabi_memcpy8
+0000c01b   __aeabi_memset
+0000c01b   __aeabi_memset4
+0000c01b   __aeabi_memset8
 ffffffff   __binit__
 ffffffff   __c_args__
-20008540   __stack
-0000aebd   _args_main
-0000ae4d   _c_int00
-20008b34   _cleanup_ptr
-20008b38   _dtors_ptr
-20008b2c   _lock
-0000aeb1   _nop
-0000aeab   _register_lock
-0000aea5   _register_unlock
-20008b30   _unlock
-0000ae0d   abort
+20008948   __stack
+0000c1ed   _args_main
+0000c17d   _c_int00
+20008f7c   _cleanup_ptr
+20008f80   _dtors_ptr
+20008f74   _lock
+0000c1e1   _nop
+0000c1db   _register_lock
+0000c1d5   _register_unlock
+20008f78   _unlock
+0000c13d   abort
 000070d5   autoip_arp_reply
 00006cd5   autoip_init
 00006f37   autoip_network_changed
 00006e29   autoip_start
 00006f57   autoip_stop
 00006f85   autoip_tmr
-200089d6   bNewPLL
+20008e1a   bNewPLL
 ffffffff   binit
-0000ab81   buttonsDisable
-0000ab79   buttonsEnable
-0000aa91   buttonsInit
-0000ab11   buttonsProcess
-0000adc1   copy_in
-200083c0   current_header
-200083bc   current_netif
+0000beb1   buttonsDisable
+0000bea9   buttonsEnable
+0000bdc1   buttonsInit
+0000be41   buttonsProcess
+0000c0f1   copy_in
+200087c0   current_header
+200087bc   current_netif
 000007f3   dhcp_arp_reply
 000002d5   dhcp_coarse_tmr
 00000325   dhcp_fine_tmr
@@ -748,15 +758,20 @@ ffffffff   binit
 00000b61   dhcp_renew
 000005f5   dhcp_start
 00000eb9   dhcp_stop
-000098cd   displayDecFL
-0000980d   displayGetFocus
-00009851   displayIncFL
-000095cd   displayInit
-00009705   displayInitComplete
-000097b9   displayMoveFocus
-0000978d   displaySetStatus
-00009769   displaySetSysStatus
-00009939   displayUpdate
+0000a529   displayAllUpdate
+0000a3f5   displayDecFL
+0000a4b7   displayGetFL
+0000a339   displayGetFocus
+0000a375   displayIncFL
+00009fe9   displayInit
+0000a145   displayInitComplete
+0000a2e5   displayMoveFocus
+0000a46f   displayResetFL
+0000a289   displaySetFocusFL
+0000a239   displaySetStatus
+0000a205   displaySetSysStatus
+0000a1d9   displaySetTitleBar
+0000a741   displayUpdate
 000085a9   etharp_arp_input
 000084e5   etharp_find_addr
 00008551   etharp_ip_input
@@ -765,40 +780,43 @@ ffffffff   binit
 00008a85   etharp_raw
 00008bc1   etharp_request
 00007f91   etharp_tmr
-0000b3e4   ethbroadcast
+0000c760   ethbroadcast
 00008bf1   ethernet_input
-0000b3ea   ethzero
-0000ae15   exit
-0000a671   facAuthEthernetInit
-0000a719   facAuthInit
-0000a653   facAuthInterruptInit
-0000a68f   facAuthLwipInit
-0000a62f   facAuthSystemInit
-0000a639   facAuthUARTInit
-20008a13   g_aucDispField
-20008940   g_aucDispStatus
-20008a54   g_aucDispSysStatus
+0000c766   ethzero
+0000c145   exit
+0000aac1   facAuthEthernetInit
+0000ab6d   facAuthInit
+0000aaa3   facAuthInterruptInit
+0000aadf   facAuthLwipInit
+0000aa7f   facAuthSystemInit
+0000aa89   facAuthUARTInit
+20008ead   g_aucDispField
+20008d48   g_aucDispStatus
+20008e1c   g_aucDispSysStatus
+20008f4c   g_aucDispTitle
 00000000   g_pfnVectors
-20008a2b   g_pucDispButClear
-20008a25   g_pucDispButSend
-20008a32   g_pucDispLineBrk
-200084dc   g_pucDispStatus
-200089d8   g_pucDispSysIPAdd
-200084d8   g_pucDispSysStatus
-200084e0   g_pucDispTitle
-20008a00   g_pucDispTitleAccessID
-200089f1   g_pucDispTitleUserID
-200084d0   g_pucFL
-20008b5c   g_ucButtons
-2000852c   g_ucButtonsNotSendPress
-200084f8   g_ucDispBaseHL
-200084e8   g_ucDispCurrHL
-200084ec   g_ucDispHLFL
-2000853c   g_ucEnetInit
-2000850c   g_ucStr
-200084e4   g_ucToBeUpd
-20008504   g_uiButtonsEnabled
-20008508   g_ulButtonFlags
+20008ec5   g_pucDispButClear
+20008ebf   g_pucDispButSend
+20008ecc   g_pucDispLineBrk
+200088ac   g_pucDispStatus
+20008e94   g_pucDispSysIPAdd
+200088a8   g_pucDispSysStatus
+200088b0   g_pucDispTitle
+20008898   g_pucFL
+200088a0   g_pucStrFL
+20008178   g_tcpMsg
+20008fa8   g_ucButtons
+20008934   g_ucButtonsNotSendPress
+200088c8   g_ucDispBaseHL
+200088b8   g_ucDispCurrHL
+200088bc   g_ucDispHLFL
+20008944   g_ucEnetInit
+20008914   g_ucStr
+20008662   g_ucTcpDone
+20008663   g_ucTcpErr
+200088b4   g_ucToBeUpd
+2000890c   g_uiButtonsEnabled
+20008910   g_ulButtonFlags
 000077af   htonl
 0000777d   htons
 000073e1   icmp_dest_unreach
@@ -809,15 +827,15 @@ ffffffff   binit
 000079c1   inet_chksum_pbuf
 00007895   inet_chksum_pseudo
 000076cb   inet_ntoa
-0000b3dc   ip_addr_any
-0000b3e0   ip_addr_broadcast
+0000c758   ip_addr_any
+0000c75c   ip_addr_broadcast
 00007ef1   ip_addr_isbroadcast
 00007ac5   ip_input
 00007e9d   ip_output
 00007d69   ip_output_if
 00007a5d   ip_route
 00009395   lwIPEthernetIntHandler
-0000a611   lwIPHostTimerHandler
+0000aa59   lwIPHostTimerHandler
 00009325   lwIPInit
 000093c5   lwIPLocalGWAddrGet
 000093b9   lwIPLocalIPAddrGet
@@ -826,25 +844,25 @@ ffffffff   binit
 00009575   lwIPNetworkConfigChange
 00009369   lwIPTimer
 00001669   lwip_init
-20008178   lwip_stats
-0000a761   main
-20008b58   main_func_sp
+20008578   lwip_stats
+0000abd9   main
+20008fa0   main_func_sp
 00001b85   mem_calloc
 00001787   mem_free
 0000171d   mem_init
 000019d9   mem_malloc
 00001801   mem_realloc
-0000ae81   memcmp
-0000abb9   memcpy
+0000c1b1   memcmp
+0000bee9   memcpy
 00001d65   memp_free
 00001bbb   memp_init
 00001cb1   memp_malloc
-0000acf1   memset
+0000c021   memset
 00001dcd   netif_add
-20008360   netif_default
+20008760   netif_default
 00001ef1   netif_find
 000020a5   netif_is_up
-2000835c   netif_list
+2000875c   netif_list
 00001e8d   netif_remove
 00001e47   netif_set_addr
 00002035   netif_set_default
@@ -881,14 +899,21 @@ ffffffff   binit
 00009099   stellarisif_interrupt
 00008c89   sys_arch_protect
 00008c91   sys_arch_unprotect
+0000b85f   tcpConnectCallback
+0000b823   tcpCopyMsg
+0000b955   tcpErrCallback
+0000b8db   tcpRecvCallback
+0000b937   tcpSendCallback
+0000b7c1   tcpSendInit
+0000b87f   tcpSendPacket
 00002ca5   tcp_abandon
 00003a83   tcp_accept
-20008374   tcp_active_pcbs
+20008774   tcp_active_pcbs
 00003923   tcp_alloc
 00003a35   tcp_arg
-0000b3c8   tcp_backoff
+0000c744   tcp_backoff
 00002d85   tcp_bind
-2000836c   tcp_bound_pcbs
+2000876c   tcp_bound_pcbs
 00002b5f   tcp_close
 00003151   tcp_connect
 00003c49   tcp_debug_print
@@ -901,9 +926,9 @@ ffffffff   binit
 00003a6f   tcp_err
 000036c9   tcp_fasttmr
 00003d39   tcp_input
-200083b4   tcp_input_pcb
+200087b4   tcp_input_pcb
 00006519   tcp_keepalive
-20008370   tcp_listen_pcbs
+20008770   tcp_listen_pcbs
 00002f13   tcp_listen_with_backlog
 00003a2b   tcp_new
 00003bd7   tcp_next_iss
@@ -911,7 +936,7 @@ ffffffff   binit
 00003abb   tcp_pcb_purge
 00003b31   tcp_pcb_remove
 00003ce7   tcp_pcbs_sane
-0000b3d5   tcp_persist_backoff
+0000c751   tcp_persist_backoff
 00003a99   tcp_poll
 00003a47   tcp_recv
 0000380d   tcp_recv_null
@@ -928,11 +953,11 @@ ffffffff   binit
 00003a5b   tcp_sent
 000037cd   tcp_setprio
 000032b9   tcp_slowtmr
-20008b00   tcp_state_str
-20008368   tcp_ticks
-2000837c   tcp_tmp_pcb
+20008f20   tcp_state_str
+20008768   tcp_ticks
+2000877c   tcp_tmp_pcb
 00002b45   tcp_tmr
-20008378   tcp_tw_pcbs
+20008778   tcp_tw_pcbs
 00003001   tcp_update_rcv_ann_wnd
 0000590d   tcp_write
 0000658d   tcp_zero_window_probe
@@ -941,15 +966,30 @@ ffffffff   binit
 00006c1d   udp_disconnect
 00006675   udp_input
 00006cb3   udp_new
-200083b8   udp_pcbs
+200087b8   udp_pcbs
 00006c47   udp_recv
 00006c61   udp_remove
 0000692b   udp_send
 00006943   udp_sendto
 00006991   udp_sendto_if
-20008b50   ulOsc
-20008b54   ulOscSelect
-20008b4c   ulSysDiv
+20008f98   ulOsc
+20008f9c   ulOscSelect
+20008f94   ulSysDiv
+00009a89   ulocaltime
+00009c89   umktime
+00009fc5   urand
+00009a53   usnprintf
+00009a21   usprintf
+00009fb5   usrand
+00009f2d   ustrcasecmp
+00009fa1   ustrcmp
+00009e39   ustrlen
+00009f41   ustrncmp
+000095cd   ustrncpy
+00009e8d   ustrnicmp
+00009e5b   ustrstr
+00009d01   ustrtoul
+00009625   uvsnprintf
 
 
 GLOBAL SYMBOLS: SORTED BY Symbol Address 
@@ -1110,189 +1150,219 @@ address    name
 000093c5   lwIPLocalGWAddrGet
 000093d1   lwIPLocalMACGet
 00009575   lwIPNetworkConfigChange
-000095cd   displayInit
-00009705   displayInitComplete
-00009769   displaySetSysStatus
-0000978d   displaySetStatus
-000097b9   displayMoveFocus
-0000980d   displayGetFocus
-00009851   displayIncFL
-000098cd   displayDecFL
-00009939   displayUpdate
-00009c41   RIT128x96x4Clear
-00009ca9   RIT128x96x4StringDraw
-00009dd9   RIT128x96x4ImageDraw
-00009e75   RIT128x96x4Enable
-00009ecf   RIT128x96x4Disable
-00009f3d   RIT128x96x4Init
-00009fe3   RIT128x96x4DisplayOn
-0000a017   RIT128x96x4DisplayOff
-0000a045   UARTStdioConfig
-0000a08b   UARTStdioInit
-0000a0a1   UARTStdioInitExpClk
-0000a0b7   UARTwrite
-0000a0fd   UARTgets
-0000a1b5   UARTgetc
-0000a1dd   UARTprintf
-0000a4c5   SysTickIntHandler
-0000a611   lwIPHostTimerHandler
-0000a62f   facAuthSystemInit
-0000a639   facAuthUARTInit
-0000a653   facAuthInterruptInit
-0000a671   facAuthEthernetInit
-0000a68f   facAuthLwipInit
-0000a719   facAuthInit
-0000a761   main
-0000a8bf   LocatorInit
-0000a931   LocatorBoardTypeSet
-0000a941   LocatorBoardIDSet
-0000a951   LocatorClientIPSet
-0000a97f   LocatorMACAddrSet
-0000a9b9   LocatorVersionSet
-0000a9e7   LocatorAppTitleSet
-0000aa91   buttonsInit
-0000ab11   buttonsProcess
-0000ab79   buttonsEnable
-0000ab81   buttonsDisable
-0000abb9   __aeabi_memcpy
-0000abb9   __aeabi_memcpy4
-0000abb9   __aeabi_memcpy8
-0000abb9   memcpy
-0000ac55   __TI_auto_init
-0000ace9   __aeabi_memclr
-0000ace9   __aeabi_memclr4
-0000ace9   __aeabi_memclr8
-0000aceb   __aeabi_memset
-0000aceb   __aeabi_memset4
-0000aceb   __aeabi_memset8
-0000acf1   memset
-0000adc1   copy_in
-0000ae09   C$$EXIT
-0000ae0d   abort
-0000ae15   exit
-0000ae4d   _c_int00
-0000ae81   memcmp
-0000aea5   _register_unlock
-0000aeab   _register_lock
-0000aeb1   _nop
-0000aebd   _args_main
-0000aed5   __TI_zero_init
-0000aee7   __TI_decompress_none
-0000aef5   ResetISR
-0000af01   __TI_decompress_rle24
-0000b3c8   tcp_backoff
-0000b3d5   tcp_persist_backoff
-0000b3dc   ip_addr_any
-0000b3e0   ip_addr_broadcast
-0000b3e4   ethbroadcast
-0000b3ea   ethzero
-0000b705   GPIOPadConfigSet
-0000b7b5   SSIConfigSetExpClk
-0000ba6d   SysCtlClockGet
-0000bc55   SysCtlClockSet
-0000bdad   SysCtlPeripheralReset
-0000be25   SysCtlPeripheralPresent
-0000be95   UARTConfigSetExpClk
-0000bf05   IntEnable
-0000bf69   SysCtlPeripheralEnable
-0000bfb9   FlashUserGet
-0000bff1   EthernetMACAddrSet
-0000c027   EthernetMACAddrGet
-0000c059   CPUcpsid
-0000c061   CPUprimask
-0000c067   CPUcpsie
-0000c06f   CPUwfi
-0000c073   CPUbasepriSet
-0000c079   CPUbasepriGet
-0000c081   SysCtlDelay
-0000c087   EthernetConfigSet
-0000c0b1   GPIODirModeSet
-0000c0d9   IntPrioritySet
-0000c101   EthernetEnable
-0000c123   EthernetPHYRead
-0000c145   GPIOPinTypeEthernetLED
-0000c161   GPIOPinTypeGPIOInput
-0000c17d   GPIOPinTypeGPIOOutput
-0000c199   GPIOPinTypeSSI
-0000c1b5   GPIOPinTypeUART
-0000c1d1   IntPriorityGroupingSet
-0000c1ed   SSIDataGetNonBlocking
-0000c201   UARTEnable
-0000c215   EthernetInitExpClk
-0000c225   EthernetIntStatus
-0000c233   SysTickEnable
-0000c241   SysTickIntEnable
-0000c24f   SSIDataPut
-0000c25b   UARTCharGet
-0000c267   UARTCharPut
-0000c273   EthernetIntDisable
-0000c27d   IntMasterDisable
-0000c287   IntMasterEnable
-0000c291   SSIDisable
-0000c29b   SSIEnable
-0000c2a5   SysTickPeriodSet
-0000c2af   EthernetIntEnable
-0000c2b7   SSIBusy
-0000c2bf   GPIOPinRead
-0000c2c5   GPIOPinWrite
-0000c2cb   EthernetIntClear
-0000c448   __TI_Handler_Table_Base
-0000c454   __TI_Handler_Table_Limit
-0000c470   __TI_CINIT_Base
-0000c488   __TI_CINIT_Limit
-20008178   lwip_stats
-2000835c   netif_list
-20008360   netif_default
-20008368   tcp_ticks
-2000836c   tcp_bound_pcbs
-20008370   tcp_listen_pcbs
-20008374   tcp_active_pcbs
-20008378   tcp_tw_pcbs
-2000837c   tcp_tmp_pcb
-200083b4   tcp_input_pcb
-200083b8   udp_pcbs
-200083bc   current_netif
-200083c0   current_header
-200084d0   g_pucFL
-200084d8   g_pucDispSysStatus
-200084dc   g_pucDispStatus
-200084e0   g_pucDispTitle
-200084e4   g_ucToBeUpd
-200084e8   g_ucDispCurrHL
-200084ec   g_ucDispHLFL
-200084f8   g_ucDispBaseHL
-20008504   g_uiButtonsEnabled
-20008508   g_ulButtonFlags
-2000850c   g_ucStr
-2000852c   g_ucButtonsNotSendPress
-2000853c   g_ucEnetInit
-20008540   __stack
-20008940   __STACK_END
-20008940   __STACK_TOP
-20008940   g_aucDispStatus
-200089d6   bNewPLL
-200089d8   g_pucDispSysIPAdd
-200089f1   g_pucDispTitleUserID
-20008a00   g_pucDispTitleAccessID
-20008a13   g_aucDispField
-20008a25   g_pucDispButSend
-20008a2b   g_pucDispButClear
-20008a32   g_pucDispLineBrk
-20008a54   g_aucDispSysStatus
-20008b00   tcp_state_str
-20008b2c   _lock
-20008b30   _unlock
-20008b34   _cleanup_ptr
-20008b38   _dtors_ptr
-20008b4c   ulSysDiv
-20008b50   ulOsc
-20008b54   ulOscSelect
-20008b58   main_func_sp
-20008b5c   g_ucButtons
+000095cd   ustrncpy
+00009625   uvsnprintf
+00009a21   usprintf
+00009a53   usnprintf
+00009a89   ulocaltime
+00009c89   umktime
+00009d01   ustrtoul
+00009e39   ustrlen
+00009e5b   ustrstr
+00009e8d   ustrnicmp
+00009f2d   ustrcasecmp
+00009f41   ustrncmp
+00009fa1   ustrcmp
+00009fb5   usrand
+00009fc5   urand
+00009fe9   displayInit
+0000a145   displayInitComplete
+0000a1d9   displaySetTitleBar
+0000a205   displaySetSysStatus
+0000a239   displaySetStatus
+0000a289   displaySetFocusFL
+0000a2e5   displayMoveFocus
+0000a339   displayGetFocus
+0000a375   displayIncFL
+0000a3f5   displayDecFL
+0000a46f   displayResetFL
+0000a4b7   displayGetFL
+0000a529   displayAllUpdate
+0000a741   displayUpdate
+0000a90d   SysTickIntHandler
+0000aa59   lwIPHostTimerHandler
+0000aa7f   facAuthSystemInit
+0000aa89   facAuthUARTInit
+0000aaa3   facAuthInterruptInit
+0000aac1   facAuthEthernetInit
+0000aadf   facAuthLwipInit
+0000ab6d   facAuthInit
+0000abd9   main
+0000af3d   RIT128x96x4Clear
+0000afa5   RIT128x96x4StringDraw
+0000b0d5   RIT128x96x4ImageDraw
+0000b171   RIT128x96x4Enable
+0000b1cb   RIT128x96x4Disable
+0000b239   RIT128x96x4Init
+0000b2df   RIT128x96x4DisplayOn
+0000b313   RIT128x96x4DisplayOff
+0000b341   UARTStdioConfig
+0000b387   UARTStdioInit
+0000b39d   UARTStdioInitExpClk
+0000b3b3   UARTwrite
+0000b3f9   UARTgets
+0000b4b1   UARTgetc
+0000b4d9   UARTprintf
+0000b7c1   tcpSendInit
+0000b823   tcpCopyMsg
+0000b85f   tcpConnectCallback
+0000b87f   tcpSendPacket
+0000b8db   tcpRecvCallback
+0000b937   tcpSendCallback
+0000b955   tcpErrCallback
+0000bbef   LocatorInit
+0000bc61   LocatorBoardTypeSet
+0000bc71   LocatorBoardIDSet
+0000bc81   LocatorClientIPSet
+0000bcaf   LocatorMACAddrSet
+0000bce9   LocatorVersionSet
+0000bd17   LocatorAppTitleSet
+0000bdc1   buttonsInit
+0000be41   buttonsProcess
+0000bea9   buttonsEnable
+0000beb1   buttonsDisable
+0000bee9   __aeabi_memcpy
+0000bee9   __aeabi_memcpy4
+0000bee9   __aeabi_memcpy8
+0000bee9   memcpy
+0000bf85   __TI_auto_init
+0000c019   __aeabi_memclr
+0000c019   __aeabi_memclr4
+0000c019   __aeabi_memclr8
+0000c01b   __aeabi_memset
+0000c01b   __aeabi_memset4
+0000c01b   __aeabi_memset8
+0000c021   memset
+0000c0f1   copy_in
+0000c139   C$$EXIT
+0000c13d   abort
+0000c145   exit
+0000c17d   _c_int00
+0000c1b1   memcmp
+0000c1d5   _register_unlock
+0000c1db   _register_lock
+0000c1e1   _nop
+0000c1ed   _args_main
+0000c205   __TI_zero_init
+0000c217   __TI_decompress_none
+0000c225   ResetISR
+0000c231   __TI_decompress_rle24
+0000c744   tcp_backoff
+0000c751   tcp_persist_backoff
+0000c758   ip_addr_any
+0000c75c   ip_addr_broadcast
+0000c760   ethbroadcast
+0000c766   ethzero
+0000caf1   GPIOPadConfigSet
+0000cba1   SysCtlPeripheralEnable
+0000cbf1   EthernetInitExpClk
+0000ce6d   SysCtlClockGet
+0000d055   SysCtlClockSet
+0000d1ad   SysCtlPeripheralReset
+0000d225   SysCtlPeripheralPresent
+0000d295   UARTConfigSetExpClk
+0000d305   IntEnable
+0000d369   SSIConfigSetExpClk
+0000d3b5   FlashUserGet
+0000d3ed   EthernetMACAddrSet
+0000d423   EthernetMACAddrGet
+0000d455   CPUcpsid
+0000d45d   CPUprimask
+0000d463   CPUcpsie
+0000d46b   CPUwfi
+0000d46f   CPUbasepriSet
+0000d475   CPUbasepriGet
+0000d47d   SysCtlDelay
+0000d483   EthernetConfigSet
+0000d4ad   GPIODirModeSet
+0000d4d5   IntPrioritySet
+0000d4fd   EthernetEnable
+0000d51f   EthernetPHYRead
+0000d541   GPIOPinTypeEthernetLED
+0000d55d   GPIOPinTypeGPIOInput
+0000d579   GPIOPinTypeGPIOOutput
+0000d595   GPIOPinTypeSSI
+0000d5b1   GPIOPinTypeUART
+0000d5cd   IntPriorityGroupingSet
+0000d5e9   SSIDataGetNonBlocking
+0000d5fd   UARTEnable
+0000d611   EthernetIntStatus
+0000d61f   SysTickEnable
+0000d62d   SysTickIntEnable
+0000d63b   SSIDataPut
+0000d647   UARTCharGet
+0000d653   UARTCharPut
+0000d65f   EthernetIntDisable
+0000d669   IntMasterDisable
+0000d673   IntMasterEnable
+0000d67d   SSIDisable
+0000d687   SSIEnable
+0000d691   SysTickPeriodSet
+0000d69b   EthernetIntEnable
+0000d6a3   SSIBusy
+0000d6ab   GPIOPinRead
+0000d6b1   GPIOPinWrite
+0000d6b7   EthernetIntClear
+0000d840   __TI_Handler_Table_Base
+0000d84c   __TI_Handler_Table_Limit
+0000d868   __TI_CINIT_Base
+0000d880   __TI_CINIT_Limit
+20008178   g_tcpMsg
+20008578   lwip_stats
+20008662   g_ucTcpDone
+20008663   g_ucTcpErr
+2000875c   netif_list
+20008760   netif_default
+20008768   tcp_ticks
+2000876c   tcp_bound_pcbs
+20008770   tcp_listen_pcbs
+20008774   tcp_active_pcbs
+20008778   tcp_tw_pcbs
+2000877c   tcp_tmp_pcb
+200087b4   tcp_input_pcb
+200087b8   udp_pcbs
+200087bc   current_netif
+200087c0   current_header
+20008898   g_pucFL
+200088a0   g_pucStrFL
+200088a8   g_pucDispSysStatus
+200088ac   g_pucDispStatus
+200088b0   g_pucDispTitle
+200088b4   g_ucToBeUpd
+200088b8   g_ucDispCurrHL
+200088bc   g_ucDispHLFL
+200088c8   g_ucDispBaseHL
+2000890c   g_uiButtonsEnabled
+20008910   g_ulButtonFlags
+20008914   g_ucStr
+20008934   g_ucButtonsNotSendPress
+20008944   g_ucEnetInit
+20008948   __stack
+20008d48   __STACK_END
+20008d48   __STACK_TOP
+20008d48   g_aucDispStatus
+20008e1a   bNewPLL
+20008e1c   g_aucDispSysStatus
+20008e94   g_pucDispSysIPAdd
+20008ead   g_aucDispField
+20008ebf   g_pucDispButSend
+20008ec5   g_pucDispButClear
+20008ecc   g_pucDispLineBrk
+20008f20   tcp_state_str
+20008f4c   g_aucDispTitle
+20008f74   _lock
+20008f78   _unlock
+20008f7c   _cleanup_ptr
+20008f80   _dtors_ptr
+20008f94   ulSysDiv
+20008f98   ulOsc
+20008f9c   ulOscSelect
+20008fa0   main_func_sp
+20008fa8   g_ucButtons
 ffffffff   __binit__
 ffffffff   __c_args__
 ffffffff   binit
 UNDEFED    SHT$$INIT_ARRAY$$Base
 UNDEFED    SHT$$INIT_ARRAY$$Limit
 
-[338 symbols]
+[368 symbols]

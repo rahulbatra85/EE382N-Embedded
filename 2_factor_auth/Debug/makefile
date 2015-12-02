@@ -14,9 +14,9 @@ $(GEN_CMDS__FLAG) \
 "./utils/lwiplib.obj" \
 "./utils/locator.obj" \
 "./two_fac_auth.obj" \
+"./tcp.obj" \
 "./startup_ccs.obj" \
 "./solenoid.obj" \
-"./http.obj" \
 "./display.obj" \
 "./buttons.obj" \
 -l"libc.a" \
@@ -137,8 +137,8 @@ all: 2_factor_authetication_system.out
 # Other Targets
 clean:
 	-$(RM) $(TMS470_EXECUTABLE_OUTPUTS__QUOTED) "2_factor_authetication_system.out"
-	-$(RM) "buttons.pp" "display.pp" "http.pp" "solenoid.pp" "startup_ccs.pp" "two_fac_auth.pp" "utils\locator.pp" "utils\lwiplib.pp" "utils\uartstdio.pp" "utils\ustdlib.pp" "drivers\rit128x96x4.pp" 
-	-$(RM) "buttons.obj" "display.obj" "http.obj" "solenoid.obj" "startup_ccs.obj" "two_fac_auth.obj" "utils\locator.obj" "utils\lwiplib.obj" "utils\uartstdio.obj" "utils\ustdlib.obj" "drivers\rit128x96x4.obj" 
+	-$(RM) "buttons.pp" "display.pp" "solenoid.pp" "startup_ccs.pp" "tcp.pp" "two_fac_auth.pp" "utils\locator.pp" "utils\lwiplib.pp" "utils\uartstdio.pp" "utils\ustdlib.pp" "drivers\rit128x96x4.pp" 
+	-$(RM) "buttons.obj" "display.obj" "solenoid.obj" "startup_ccs.obj" "tcp.obj" "two_fac_auth.obj" "utils\locator.obj" "utils\lwiplib.obj" "utils\uartstdio.obj" "utils\ustdlib.obj" "drivers\rit128x96x4.obj" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

@@ -1,1 +1,1 @@
-"../buttons.c" "../display.c" "../http.c" "../solenoid.c" "../startup_ccs.c" "../two_fac_auth.c" 
+"../buttons.c" "../display.c" "../solenoid.c" "../startup_ccs.c" "../tcp.c" "../two_fac_auth.c" 

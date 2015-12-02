@@ -17,7 +17,7 @@
 #include "utils/uartstdio.h"
 #include "buttons.h"
 #include "display.h"
-#include "http.h"
+#include "tcp.h"
 
 #define SYSTICKHZ               100
 #define SYSTICKMS               (1000 / SYSTICKHZ)
@@ -40,6 +40,8 @@ extern unsigned char g_ucButtons;
 extern unsigned char g_ucButtonsNotSendPress;
 static unsigned char g_ucButtonClockA = 0;
 static unsigned char g_ucButtonClockB = 0;
+extern unsigned char g_ucTcpErr;
+extern unsigned char g_ucTcpDone;
 
 unsigned int g_ucEnetInit;
 
@@ -130,6 +132,7 @@ lwIPHostTimerHandler(void)
     // If IP Address has not yet been assigned, update the display accordingly
     if(ulIPAddress == 0)
     {
+    	g_ucEnetInit = false;
     }
     // Check if IP address has changed, and display if it has.
     else if(ulLastIPAddress != ulIPAddress)
@@ -258,6 +261,9 @@ void facAuthInit(){
 int main(void)
 {
 	unsigned long ulIPAddress;
+	unsigned char genCodeReq[]="GET /genCode?userid=12345 HTTP/1.1\r\nHost: 192.168.2.2:8080\r\n\r\n";
+	unsigned char verifyCodeReq[]="GET /verifyReq?userid=12345&code=33250 HTTP/1.1\r\nHost: 192.168.2.2:8080\r\n\r\n";
+	struct ip_addr ip;
 
 	//Step 0
 	facAuthInit();
@@ -269,7 +275,7 @@ int main(void)
 
 	//update display to show connected status and IP address
 	displayInitComplete(ulIPAddress);
-	displayUpdate();
+	displayAllUpdate();
 
 	//Step 1
 	//Highlight userID section and enable buttons
@@ -285,31 +291,100 @@ int main(void)
 	//Disable buttons
 	buttonsDisable();
 
-	//send code request
-	displaySetStatus(DISP_STAT_CODE_REQ);
-	displayUpdate();
+	//Send Request
+	char *fl = displayGetFL();
+	UARTprintf("userID: %s\n",fl);
+	char userID[5];
+	userID[0] = fl[0];
+	userID[1] = fl[1];
+	userID[2] = fl[2];
+	userID[3] = fl[3];
+	userID[4] = fl[4];
+	genCodeReq[20] = userID[0];
+	genCodeReq[21] = userID[1];
+	genCodeReq[22] = userID[2];
+	genCodeReq[23] = userID[3];
+	genCodeReq[24] = userID[4];
+	tcpCopyMsg(genCodeReq);
 
-	while(1){
+	UARTprintf("genCodeReq: %s\n",genCodeReq);
 
+	IP4_ADDR(&ip, 192,168,2,2);    //IP of my server
+	tcpSendInit(ip,8080);
+
+	//Wait until send is complete
+	while(!g_ucTcpDone){}
+
+	if(g_ucTcpErr == 0){
+		//update display status(error or request sent)
+		displaySetStatus(DISP_STAT_CODE_REQ);
+		displayUpdate();
+	} else{
+		//update display status(error or request sent)
+		displaySetStatus(DISP_STAT_CODE_REQ_ERR);
+		displayUpdate();
 	}
-	//update display status(error or request sent)
 
 
 	//Step 2
 	//update display to show Enter Access Code section
+	displaySetTitleBar(DISP_TTL_ACCESS_CODE);
+	displaySetFocusFL();
+	displayResetFL();
+	displayAllUpdate();
 
 	//Enable buttons
+	buttonsEnable();
 
 	//loop until send or clear button is pressed
+	g_ucButtonsNotSendPress = 1;
+	while(g_ucButtonsNotSendPress){
+		displayUpdate();
+		buttonsProcess();
+	}
 
 	//Disable buttons
+	buttonsDisable();
 
 	//send code request
+	fl = displayGetFL();
+	UARTprintf("accessCode: %s\n",fl);
+	verifyCodeReq[22] = userID[0];
+	verifyCodeReq[23] = userID[1];
+	verifyCodeReq[24] = userID[2];
+	verifyCodeReq[25] = userID[3];
+	verifyCodeReq[26] = userID[4];
+	verifyCodeReq[33] = fl[0];
+	verifyCodeReq[34] = fl[1];
+	verifyCodeReq[35] = fl[2];
+	verifyCodeReq[36] = fl[3];
+	verifyCodeReq[37] = fl[4];
+	UARTprintf("verifyCodeReq: %s\n",verifyCodeReq);
+
+	tcpCopyMsg(verifyCodeReq);
+
+	IP4_ADDR(&ip, 192,168,2,2);    //IP of my server
+	tcpSendInit(ip,8080);
 
 	//update display status(error or request sent)
+	//Wait until send is complete
+	while(!g_ucTcpDone){}
+
+	if(g_ucTcpErr == 0){
+		//update display status(error or request sent)
+		displaySetStatus(DISP_STAT_ACC_REQ);
+		displayUpdate();
+	} else{
+		//update display status(error or request sent)
+		displaySetStatus(DISP_STAT_ACC_REQ_ERR);
+		displayUpdate();
+	}
+
+	while(1){}
 
 	//process data received
 		//if access granted, then open solenoid
 		//else just display access denied and go back to Enter Access Code screen
 
-}
+	}
+

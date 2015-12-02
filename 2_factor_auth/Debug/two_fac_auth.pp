@@ -39,7 +39,7 @@ two_fac_auth.obj: C:/StellarisWare/third_party/lwip-1.3.2/src/include/lwip/memp_
 two_fac_auth.obj: ../utils/uartstdio.h
 two_fac_auth.obj: ../buttons.h
 two_fac_auth.obj: ../display.h
-two_fac_auth.obj: ../http.h
+two_fac_auth.obj: ../tcp.h
 
 ../two_fac_auth.c: 
 C:/StellarisWare/inc/hw_ints.h: 
@@ -80,4 +80,4 @@ C:/StellarisWare/third_party/lwip-1.3.2/src/include/lwip/memp_std.h:
 ../utils/uartstdio.h: 
 ../buttons.h: 
 ../display.h: 
-../http.h: 
+../tcp.h: 
